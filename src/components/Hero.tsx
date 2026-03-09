@@ -22,8 +22,8 @@ const Hero: React.FC = () => {
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        {/* Subtle dark overlay for depth and legibility */}
-        <div className="absolute inset-0 bg-black/20" />
+        {/* Subtle overlay for depth and color saturation */}
+        <div className="absolute inset-0 bg-black/10" />
 
 
         {/* Clean logo floating over forest */}

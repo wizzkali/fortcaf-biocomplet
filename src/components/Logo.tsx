@@ -7,7 +7,7 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ size = 'sm', className = '' }) => {
-  const w = size === 'lg' ? 420 : 130;
+  const w = size === 'lg' ? 520 : 130;
 
   return (
     <img
