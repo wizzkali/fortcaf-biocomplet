@@ -28,7 +28,6 @@ const Logo: React.FC<LogoProps> = ({ size = 'sm', className = '' }) => {
           mixBlendMode: 'multiply',
         }}
       />
-      />
     </div>
   );
 };
