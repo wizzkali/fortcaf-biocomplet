@@ -29,7 +29,6 @@ const Logo: React.FC<LogoProps> = ({ size = 'sm', className = '' }) => {
             width: w,
             height: 'auto',
             objectFit: 'contain',
-            contrast: 1.3,
             filter: 'contrast(1.3) saturate(1.2)',
           }}
         />
