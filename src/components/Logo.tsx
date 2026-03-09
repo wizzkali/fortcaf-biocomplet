@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImg from '@/assets/logo-transparent.png';
+import logoImg from '@/assets/logo-clean.png';
 
 interface LogoProps {
   size?: 'sm' | 'lg';
