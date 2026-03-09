@@ -11,53 +11,43 @@ const Logo: React.FC<LogoProps> = ({ size = 'sm', className = '' }) => {
 
   return (
     <div className={`inline-flex flex-col items-center ${className}`} style={{ width: w }}>
-      {/* Two overlapping leaves sprouting from the oval — exactly like the real logo */}
+      {/* Three overlapping leaves — smooth, rounded, natural shape like the real packaging */}
       <svg
-        width={100 * scale}
-        height={72 * scale}
-        viewBox="0 0 100 72"
+        width={110 * scale}
+        height={80 * scale}
+        viewBox="0 0 110 80"
         fill="none"
-        style={{ marginBottom: `${-10 * scale}px`, position: 'relative', zIndex: 1 }}
+        style={{ marginBottom: `${-8 * scale}px`, position: 'relative', zIndex: 1 }}
       >
-        {/* Left leaf — tilted left */}
+        {/* Left leaf — dark green, tilted left */}
         <path
-          d="M50 68C50 68 28 52 22 32C18 18 24 8 30 6C36 4 42 10 46 22C50 34 50 54 50 68Z"
+          d="M55 72 C52 60, 32 40, 26 22 C24 16, 28 10, 34 12 C40 14, 50 32, 55 52Z"
           fill="#3D6B35"
         />
         {/* Left leaf midrib */}
-        <path
-          d="M32 12C36 24 44 44 50 62"
-          stroke="#2D5228"
-          strokeWidth="1.2"
-          fill="none"
-          opacity="0.5"
-        />
-        {/* Left leaf side veins */}
-        <path d="M36 20C40 28 44 34 48 40" stroke="#2D5228" strokeWidth="0.7" fill="none" opacity="0.3" />
-        <path d="M30 26C36 32 42 40 46 48" stroke="#2D5228" strokeWidth="0.7" fill="none" opacity="0.3" />
+        <path d="M34 16 C40 28, 50 48, 55 64" stroke="#2D5228" strokeWidth="0.8" fill="none" opacity="0.4" />
 
-        {/* Right leaf — tilted right, slightly overlapping */}
+        {/* Right leaf — medium green, tilted right */}
         <path
-          d="M50 68C50 68 72 52 78 32C82 18 76 8 70 6C64 4 58 10 54 22C50 34 50 54 50 68Z"
-          fill="#5A8F4A"
+          d="M55 72 C58 60, 78 40, 84 22 C86 16, 82 10, 76 12 C70 14, 60 32, 55 52Z"
+          fill="#4A7D3E"
         />
         {/* Right leaf midrib */}
-        <path
-          d="M68 12C64 24 56 44 50 62"
-          stroke="#3D6B35"
-          strokeWidth="1.2"
-          fill="none"
-          opacity="0.5"
-        />
-        {/* Right leaf side veins */}
-        <path d="M64 20C60 28 56 34 52 40" stroke="#3D6B35" strokeWidth="0.7" fill="none" opacity="0.3" />
-        <path d="M70 26C64 32 58 40 54 48" stroke="#3D6B35" strokeWidth="0.7" fill="none" opacity="0.3" />
+        <path d="M76 16 C70 28, 60 48, 55 64" stroke="#3D6B35" strokeWidth="0.8" fill="none" opacity="0.4" />
 
-        {/* Small stem connecting to oval */}
-        <path d="M50 62V72" stroke="#5A8F4A" strokeWidth="2.5" strokeLinecap="round" />
+        {/* Center leaf — lighter green, pointing up, on top */}
+        <path
+          d="M55 70 C53 54, 44 30, 46 14 C47 8, 52 4, 55 4 C58 4, 63 8, 64 14 C66 30, 57 54, 55 70Z"
+          fill="#5A8F4A"
+        />
+        {/* Center leaf midrib */}
+        <path d="M55 8 L55 65" stroke="#3D6B35" strokeWidth="0.8" fill="none" opacity="0.4" />
+
+        {/* Stem */}
+        <path d="M55 68 L55 80" stroke="#5A8F4A" strokeWidth="2.5" strokeLinecap="round" />
       </svg>
 
-      {/* Oval pill — wide rounded capsule like the real logo */}
+      {/* Oval pill */}
       <div
         className="flex items-center justify-center"
         style={{
@@ -81,7 +71,7 @@ const Logo: React.FC<LogoProps> = ({ size = 'sm', className = '' }) => {
         </span>
       </div>
 
-      {/* BioComplet — "Bio" in green, "Complet" in dark brown */}
+      {/* BioComplet */}
       <div
         style={{
           marginTop: `${6 * scale}px`,
