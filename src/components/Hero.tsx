@@ -10,29 +10,31 @@ const Hero: React.FC = () => {
 
   return (
     <section id="inicio" className="relative">
-      {/* === TOP SECTION — Forest background with circular logo === */}
+      {/* === TOP SECTION — Forest background with clean logo === */}
       <div
         className="relative flex flex-col items-center justify-center pt-24 pb-12 md:pt-28 md:pb-16"
         style={{ minHeight: '60vh' }}
       >
-        {/* Forest background */}
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${forestBg})` }}
+        {/* Forest background as img for reliable loading */}
+        <img
+          src={forestBg}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        {/* Subtle dark overlay for depth */}
-        <div className="absolute inset-0 bg-black/15" />
+        {/* Subtle dark overlay for depth and legibility */}
+        <div className="absolute inset-0 bg-black/20" />
 
         {/* 1kg indicator */}
         <span
-          className="absolute top-24 right-8 md:top-28 md:right-16 font-display font-bold relative z-10"
+          className="absolute top-24 right-8 md:top-28 md:right-16 font-display font-bold z-10"
           style={{ color: '#FAF6EE', fontSize: 'clamp(18px, 3vw, 28px)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
         >
           1kg
         </span>
 
-        {/* Large centered circular logo with glow */}
-        <Logo size="lg" className="mb-4 relative z-10" />
+        {/* Clean logo floating over forest */}
+        <Logo size="lg" className="mb-4 z-10" />
       </div>
 
       {/* === DARK PRODUCT BAND === */}
@@ -40,9 +42,11 @@ const Hero: React.FC = () => {
         className="relative flex flex-col items-center justify-center overflow-hidden"
         style={{ minHeight: '50vh' }}
       >
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroProductBg})` }}
+        <img
+          src={heroProductBg}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30" />
 
