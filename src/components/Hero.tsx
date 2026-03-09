@@ -3,7 +3,7 @@ import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
 import doypackImg from '@/assets/doypack-fortcafe.jpg';
 import heroProductBg from '@/assets/hero-product-bg.jpg';
-import forestBg from '@/assets/forest-bg.jpg';
+import forestBg from '@/assets/hero-forest.jpg';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
