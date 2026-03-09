@@ -7,9 +7,8 @@ import { useCart } from '@/contexts/CartContext';
 const navLinks = [
   { key: 'nav_inicio' as const, href: '#inicio' },
   { key: 'nav_producto' as const, href: '#producto' },
-  { key: 'nav_tienda' as const, href: '#tienda' },
-  { key: 'nav_agricultura' as const, href: '#agricultura' },
-  { key: 'nav_colabora' as const, href: '#colabora' },
+  { key: 'nav_cultivos' as const, href: '#cultivos' },
+  { key: 'nav_como_usarlo' as const, href: '#como-usarlo' },
   { key: 'nav_contacto' as const, href: '#contacto' },
 ];
 
@@ -43,7 +42,7 @@ const Navbar: React.FC = () => {
           <Logo size="sm" />
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <button
                 key={link.key}
@@ -56,7 +55,15 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3">
+            {/* Solicita información button */}
+            <button
+              onClick={() => handleNavClick('#contacto')}
+              className="fc-btn-primary text-xs px-5 py-2"
+            >
+              {t('nav_solicita')}
+            </button>
+
             {/* Language toggle */}
             <div className="flex rounded-full overflow-hidden border border-fc-warm-white/30">
               <button
@@ -85,11 +92,24 @@ const Navbar: React.FC = () => {
                 </span>
               )}
             </button>
+          </div>
 
-            {/* Mobile hamburger */}
+          {/* Mobile hamburger */}
+          <div className="flex items-center gap-3 md:hidden">
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="relative text-fc-warm-white hover:text-fc-green-light transition-colors"
+            >
+              <ShoppingBag size={22} />
+              {qty > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 bg-fc-green-dark text-fc-warm-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  {qty}
+                </span>
+              )}
+            </button>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden text-fc-warm-white"
+              className="text-fc-warm-white"
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -111,6 +131,26 @@ const Navbar: React.FC = () => {
                 {t(link.key)}
               </button>
             ))}
+            <button
+              onClick={() => handleNavClick('#contacto')}
+              className="fc-btn-primary text-xs mt-4"
+            >
+              {t('nav_solicita')}
+            </button>
+            <div className="flex rounded-full overflow-hidden border border-fc-warm-white/30 self-start">
+              <button
+                onClick={() => setLang('es')}
+                className={`px-3 py-1 text-xs font-semibold transition-colors ${lang === 'es' ? 'bg-fc-green-dark text-fc-warm-white' : 'text-fc-warm-white/70 hover:text-fc-warm-white'}`}
+              >
+                ES
+              </button>
+              <button
+                onClick={() => setLang('ca')}
+                className={`px-3 py-1 text-xs font-semibold transition-colors ${lang === 'ca' ? 'bg-fc-green-dark text-fc-warm-white' : 'text-fc-warm-white/70 hover:text-fc-warm-white'}`}
+              >
+                CA
+              </button>
+            </div>
           </div>
         </div>
       )}

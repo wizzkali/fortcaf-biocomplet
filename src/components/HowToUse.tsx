@@ -37,7 +37,7 @@ const HowToUse: React.FC = () => {
   ];
 
   return (
-    <section className="fc-section-green py-20 md:py-28">
+    <section id="como-usarlo" className="fc-section-green py-20 md:py-28">
       <FadeInSection className="max-w-5xl mx-auto px-4 md:px-8">
         <h2 className="fc-h2 text-fc-warm-white text-center mb-16">{t('howto_title')}</h2>
 
