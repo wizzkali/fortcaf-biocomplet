@@ -1,117 +1,80 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, ShoppingBag } from 'lucide-react';
-import Logo from './Logo';
+import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useCart } from '@/contexts/CartContext';
+import FadeInSection from './FadeInSection';
 
-const navLinks = [
-  { key: 'nav_inicio' as const, href: '#inicio' },
-  { key: 'nav_producto' as const, href: '#producto' },
-  { key: 'nav_cultivos' as const, href: '#cultivos' },
-  { key: 'nav_como_usarlo' as const, href: '#como-usarlo' },
-  { key: 'nav_contacto' as const, href: '#contacto' },
-];
+const NavLink: React.FC<{ label: string; href: string }> = ({ label, href }) => {
+  const handleClick = () => {
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+  };
+  return (
+    <button
+      onClick={handleClick}
+      className="font-display font-bold uppercase tracking-wide hover:opacity-70 transition-opacity cursor-pointer"
+      style={{ color: '#2C1A0E', fontSize: '15px', letterSpacing: '0.06em' }}
+    >
+      {label}
+    </button>
+  );
+};
 
 const Navbar: React.FC = () => {
   const { t, lang, setLang } = useLanguage();
-  const { qty, setIsCartOpen } = useCart();
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handle = () => setScrolled(window.scrollY > 60);
     window.addEventListener('scroll', handle, { passive: true });
     return () => window.removeEventListener('scroll', handle);
   }, []);
 
-  const handleNavClick = (href: string) => {
-    setMobileOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: 'smooth' });
-  };
+  const links = [
+    { label: t('nav_inicio'), href: '#inicio' },
+    { label: t('nav_producto'), href: '#producto' },
+    { label: 'NUESTRO CAFÉ', href: '#economia-circular' },
+  ];
 
   return (
     <>
       <nav
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
-          backgroundColor: scrolled ? 'rgba(44,26,14,0.96)' : 'transparent',
+          backgroundColor: scrolled ? 'rgba(168, 184, 154, 0.97)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(8px)' : 'none',
         }}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
-          <Logo size="sm" />
-
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <button
-                key={link.key}
-                onClick={() => handleNavClick(link.href)}
-                className="fc-label text-fc-warm-white hover:text-fc-green-light transition-colors cursor-pointer"
-                style={{ fontSize: '13px' }}
-              >
-                {t(link.key)}
-              </button>
+          {/* Desktop nav — centered links */}
+          <div className="hidden md:flex items-center gap-10 mx-auto">
+            {links.map((link) => (
+              <NavLink key={link.href} label={link.label} href={link.href} />
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-3">
-            {/* Solicita información button */}
+          {/* Language toggle */}
+          <div className="hidden md:flex items-center gap-1 absolute right-8">
             <button
-              onClick={() => handleNavClick('#contacto')}
-              className="fc-btn-primary text-xs px-5 py-2"
+              onClick={() => setLang('es')}
+              className={`px-2 py-1 text-xs font-bold rounded transition-colors ${lang === 'es' ? 'bg-fc-green-dark text-fc-warm-white' : 'text-fc-brown-dark/60 hover:text-fc-brown-dark'}`}
             >
-              {t('nav_solicita')}
+              ES
             </button>
-
-            {/* Language toggle */}
-            <div className="flex rounded-full overflow-hidden border border-fc-warm-white/30">
-              <button
-                onClick={() => setLang('es')}
-                className={`px-3 py-1 text-xs font-semibold transition-colors ${lang === 'es' ? 'bg-fc-green-dark text-fc-warm-white' : 'text-fc-warm-white/70 hover:text-fc-warm-white'}`}
-              >
-                ES
-              </button>
-              <button
-                onClick={() => setLang('ca')}
-                className={`px-3 py-1 text-xs font-semibold transition-colors ${lang === 'ca' ? 'bg-fc-green-dark text-fc-warm-white' : 'text-fc-warm-white/70 hover:text-fc-warm-white'}`}
-              >
-                CA
-              </button>
-            </div>
-
-            {/* Cart icon */}
             <button
-              onClick={() => setIsCartOpen(true)}
-              className="relative text-fc-warm-white hover:text-fc-green-light transition-colors"
+              onClick={() => setLang('ca')}
+              className={`px-2 py-1 text-xs font-bold rounded transition-colors ${lang === 'ca' ? 'bg-fc-green-dark text-fc-warm-white' : 'text-fc-brown-dark/60 hover:text-fc-brown-dark'}`}
             >
-              <ShoppingBag size={22} />
-              {qty > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-fc-green-dark text-fc-warm-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                  {qty}
-                </span>
-              )}
+              CA
             </button>
           </div>
 
           {/* Mobile hamburger */}
-          <div className="flex items-center gap-3 md:hidden">
-            <button
-              onClick={() => setIsCartOpen(true)}
-              className="relative text-fc-warm-white hover:text-fc-green-light transition-colors"
-            >
-              <ShoppingBag size={22} />
-              {qty > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-fc-green-dark text-fc-warm-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                  {qty}
-                </span>
-              )}
-            </button>
+          <div className="flex items-center gap-3 md:hidden w-full justify-between">
+            <span className="font-display font-bold text-sm" style={{ color: '#2C1A0E' }}>FortCafé</span>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="text-fc-warm-white"
+              className="text-fc-brown-dark"
             >
-              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileOpen ? '✕' : '☰'}
             </button>
           </div>
         </div>
@@ -120,33 +83,31 @@ const Navbar: React.FC = () => {
       {/* Mobile drawer */}
       {mobileOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
-          <div className="absolute inset-0 bg-fc-brown-dark/80" onClick={() => setMobileOpen(false)} />
-          <div className="absolute right-0 top-0 h-full w-64 bg-fc-brown-dark p-8 pt-20 flex flex-col gap-6">
-            {navLinks.map((link) => (
+          <div className="absolute inset-0 bg-black/40" onClick={() => setMobileOpen(false)} />
+          <div className="absolute right-0 top-0 h-full w-64 p-8 pt-20 flex flex-col gap-6" style={{ backgroundColor: '#A8B89A' }}>
+            {links.map((link) => (
               <button
-                key={link.key}
-                onClick={() => handleNavClick(link.href)}
-                className="fc-label text-fc-warm-white hover:text-fc-green-light transition-colors text-left text-base"
+                key={link.href}
+                onClick={() => {
+                  setMobileOpen(false);
+                  document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="font-display font-bold uppercase text-left"
+                style={{ color: '#2C1A0E', fontSize: '16px' }}
               >
-                {t(link.key)}
+                {link.label}
               </button>
             ))}
-            <button
-              onClick={() => handleNavClick('#contacto')}
-              className="fc-btn-primary text-xs mt-4"
-            >
-              {t('nav_solicita')}
-            </button>
-            <div className="flex rounded-full overflow-hidden border border-fc-warm-white/30 self-start">
+            <div className="flex gap-2 mt-4">
               <button
                 onClick={() => setLang('es')}
-                className={`px-3 py-1 text-xs font-semibold transition-colors ${lang === 'es' ? 'bg-fc-green-dark text-fc-warm-white' : 'text-fc-warm-white/70 hover:text-fc-warm-white'}`}
+                className={`px-3 py-1 text-xs font-bold rounded ${lang === 'es' ? 'bg-fc-green-dark text-fc-warm-white' : ''}`}
               >
                 ES
               </button>
               <button
                 onClick={() => setLang('ca')}
-                className={`px-3 py-1 text-xs font-semibold transition-colors ${lang === 'ca' ? 'bg-fc-green-dark text-fc-warm-white' : 'text-fc-warm-white/70 hover:text-fc-warm-white'}`}
+                className={`px-3 py-1 text-xs font-bold rounded ${lang === 'ca' ? 'bg-fc-green-dark text-fc-warm-white' : ''}`}
               >
                 CA
               </button>

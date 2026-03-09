@@ -1,129 +1,77 @@
 import React from 'react';
 import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
+import doypackImg from '@/assets/doypack-fortcafe.jpg';
+import heroProductBg from '@/assets/hero-product-bg.jpg';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
 
-  const scrollTo = (id: string) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section
-      id="inicio"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
-      style={{ backgroundColor: 'hsl(36, 40%, 90%)' }}
-    >
-      {/* Coffee stain textures — top band */}
+    <section id="inicio" className="relative">
+      {/* === TOP SECTION — Sage green with logo === */}
       <div
-        className="absolute top-0 left-0 right-0"
-        style={{
-          height: '18vh',
-          background: 'linear-gradient(180deg, hsl(25, 45%, 35%) 0%, hsl(30, 40%, 50%) 40%, hsl(36, 40%, 85%) 85%, transparent 100%)',
-          opacity: 0.85,
-        }}
-      />
-      {/* Coffee stain spots */}
-      <div
-        className="absolute"
-        style={{
-          top: '12vh',
-          left: '5%',
-          width: '180px',
-          height: '200px',
-          background: 'radial-gradient(ellipse, rgba(139, 94, 60, 0.25) 0%, transparent 70%)',
-          borderRadius: '50%',
-          transform: 'rotate(-15deg)',
-        }}
-      />
-      <div
-        className="absolute"
-        style={{
-          top: '8vh',
-          right: '8%',
-          width: '220px',
-          height: '180px',
-          background: 'radial-gradient(ellipse, rgba(139, 94, 60, 0.2) 0%, transparent 70%)',
-          borderRadius: '50%',
-          transform: 'rotate(20deg)',
-        }}
-      />
-      <div
-        className="absolute"
-        style={{
-          top: '15vh',
-          left: '40%',
-          width: '120px',
-          height: '140px',
-          background: 'radial-gradient(ellipse, rgba(160, 110, 60, 0.15) 0%, transparent 70%)',
-          borderRadius: '50%',
-        }}
-      />
-      {/* More scattered stain spots on sides */}
-      <div
-        className="absolute"
-        style={{
-          top: '35%',
-          right: '2%',
-          width: '100px',
-          height: '160px',
-          background: 'radial-gradient(ellipse, rgba(139, 94, 60, 0.12) 0%, transparent 70%)',
-          borderRadius: '50%',
-          transform: 'rotate(30deg)',
-        }}
-      />
-      <div
-        className="absolute"
-        style={{
-          top: '50%',
-          left: '3%',
-          width: '130px',
-          height: '120px',
-          background: 'radial-gradient(ellipse, rgba(160, 110, 60, 0.1) 0%, transparent 70%)',
-          borderRadius: '50%',
-          transform: 'rotate(-10deg)',
-        }}
-      />
-
-      {/* Main content */}
-      <div className="relative z-20 flex flex-col items-center text-center px-4 pt-24 pb-16">
-        {/* Large logo */}
-        <Logo size="lg" className="mb-10" />
-
-        {/* Main heading */}
-        <h1
-          className="font-display font-bold uppercase"
-          style={{
-            color: '#2C1A0E',
-            fontSize: 'clamp(28px, 5vw, 48px)',
-            letterSpacing: '0.04em',
-            lineHeight: 1.15,
-            marginBottom: '12px',
-          }}
+        className="relative flex flex-col items-center justify-center pt-24 pb-8 md:pt-28 md:pb-12"
+        style={{ backgroundColor: '#A8B89A' }}
+      >
+        {/* 1kg indicator top right */}
+        <span
+          className="absolute top-24 right-8 md:top-28 md:right-16 font-display font-bold"
+          style={{ color: '#2C1A0E', fontSize: 'clamp(18px, 3vw, 28px)' }}
         >
-          FERTILIZANTE DE CAFÉ
-        </h1>
+          1kg
+        </span>
 
-        {/* Subheading */}
-        <p
-          style={{
-            color: '#3D6B35',
-            fontSize: 'clamp(18px, 3vw, 26px)',
-            fontWeight: 500,
-            letterSpacing: '0.02em',
-          }}
-        >
-          100% ecológico
-        </p>
+        {/* Large centered logo */}
+        <Logo size="lg" className="mb-4" />
+      </div>
 
-        {/* CTA */}
-        <button
-          onClick={() => scrollTo('#contacto')}
-          className="fc-btn-primary text-base px-10 py-4 mt-10"
-        >
-          {t('nav_solicita')}
-        </button>
+      {/* === DARK PRODUCT BAND — coffee grounds, doypack, text overlay === */}
+      <div
+        className="relative flex flex-col items-center justify-center overflow-hidden"
+        style={{ minHeight: '50vh' }}
+      >
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroProductBg})` }}
+        />
+        <div className="absolute inset-0 bg-black/30" />
+
+        {/* Doypack product image */}
+        <div className="relative z-10 flex flex-col items-center text-center px-4 py-12 md:py-16">
+          <img
+            src={doypackImg}
+            alt="FortCafé BioComplet 1kg doypack"
+            className="w-32 md:w-44 mb-4 drop-shadow-2xl"
+            style={{ filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.4))' }}
+          />
+
+          {/* Large title overlay */}
+          <h1
+            className="font-display font-bold uppercase text-center leading-none"
+            style={{
+              color: '#FAF6EE',
+              fontSize: 'clamp(32px, 7vw, 64px)',
+              letterSpacing: '0.02em',
+              textShadow: '0 2px 12px rgba(0,0,0,0.4)',
+            }}
+          >
+            FORTCAFÉ<br />BIOCOMPLET
+          </h1>
+
+          <p
+            className="font-body font-semibold uppercase mt-3"
+            style={{
+              color: '#FAF6EE',
+              fontSize: 'clamp(14px, 2.5vw, 22px)',
+              letterSpacing: '0.06em',
+              textShadow: '0 1px 8px rgba(0,0,0,0.3)',
+            }}
+          >
+            FERTILIZANTE ORGÁNICO DE<br />CAFÉ 100% ECOLÓGICO
+          </p>
+        </div>
       </div>
     </section>
   );
