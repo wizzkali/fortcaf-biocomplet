@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
 import CoffeeStain from './CoffeeStain';
-import doypackImg from '@/assets/doypack-fortcafe.jpg';
+import heroBg from '@/assets/hero-bg.jpg';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
@@ -12,59 +12,35 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="inicio" className="fc-section-dark relative min-h-screen flex items-center overflow-hidden">
-      <CoffeeStain className="top-10 right-10" size={250} opacity={0.12} />
-      <CoffeeStain className="bottom-20 left-5" size={180} opacity={0.08} />
+    <section
+      id="inicio"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-fc-brown-dark/60" />
 
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-32 w-full">
-        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-          {/* Text content */}
-          <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-            <Logo size="lg" className="mb-8" />
+      <CoffeeStain className="top-10 right-10 z-10" size={250} opacity={0.12} />
+      <CoffeeStain className="bottom-20 left-5 z-10" size={180} opacity={0.08} />
 
-            <h1 className="fc-h1 text-4xl md:text-6xl text-fc-warm-white mb-4 leading-tight">
-              {t('hero_tagline')}
-            </h1>
+      <div className="relative z-20 max-w-3xl mx-auto px-4 md:px-8 py-32 w-full text-center">
+        <Logo size="lg" className="mb-8 mx-auto" />
 
-            <p className="fc-label text-fc-green-light mb-4" style={{ letterSpacing: '0.15em', fontSize: '13px' }}>
-              {t('hero_claim')}
-            </p>
+        <h1 className="fc-h1 text-4xl md:text-6xl text-fc-warm-white mb-4 leading-tight">
+          {t('hero_tagline')}
+        </h1>
 
-            <p className="text-fc-warm-white/75 text-lg mb-6 max-w-lg leading-relaxed">
-              {t('hero_desc')}
-            </p>
+        <p className="fc-label text-fc-green-light mb-8" style={{ letterSpacing: '0.15em', fontSize: '13px' }}>
+          {t('hero_claim')}
+        </p>
 
-            {/* Badges */}
-            <div className="flex flex-wrap gap-2 mb-8 justify-center md:justify-start">
-              <span className="fc-badge fc-badge-green">🌿 100% Ecológico</span>
-              <span className="fc-badge fc-badge-green">♻️ Economía Circular</span>
-              <span className="fc-badge fc-badge-brown">✅ Cert. CAAE + defeder</span>
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-wrap gap-4 items-center justify-center md:justify-start">
-              <button onClick={() => scrollTo('#tienda')} className="fc-btn-primary">
-                {t('hero_cta')}
-              </button>
-              <button
-                onClick={() => scrollTo('#economia-circular')}
-                className="text-fc-warm-white underline underline-offset-4 hover:text-fc-green-light transition-colors font-medium"
-              >
-                {t('hero_cta2')}
-              </button>
-            </div>
-          </div>
-
-          {/* Product image */}
-          <div className="flex-shrink-0">
-            <img
-              src={doypackImg}
-              alt="FortCafé BioComplet - Fertilizante orgánico 1kg"
-              className="w-64 md:w-80 drop-shadow-2xl"
-              style={{ filter: 'drop-shadow(0 0 40px rgba(90,143,74,0.3))' }}
-            />
-          </div>
-        </div>
+        <button onClick={() => scrollTo('#contacto')} className="fc-btn-primary text-base px-10 py-4">
+          {t('nav_solicita')}
+        </button>
       </div>
     </section>
   );

@@ -8,46 +8,65 @@ const Product: React.FC = () => {
   const { t } = useLanguage();
 
   const attrs = [
-    { icon: Leaf, label: t('product_organic') },
-    { icon: RefreshCw, label: t('product_circular') },
-    { icon: Shield, label: t('product_ecoviable') },
-    { icon: CircleOff, label: t('product_zero') },
+    { icon: Leaf, label: t('product_organic'), position: 'top-left' },
+    { icon: RefreshCw, label: t('product_circular'), position: 'top-right' },
+    { icon: Shield, label: t('product_ecoviable'), position: 'bottom-left' },
+    { icon: CircleOff, label: t('product_zero'), position: 'bottom-right' },
   ];
 
   return (
     <section id="producto" className="fc-section-dark py-20 md:py-28">
-      <FadeInSection className="max-w-6xl mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          {/* Image */}
-          <div className="md:w-[45%] flex justify-center">
-            <img
-              src={doypackImg}
-              alt="FortCafé BioComplet"
-              className="w-56 md:w-72"
-              style={{ filter: 'drop-shadow(0 0 40px rgba(90,143,74,0.3))' }}
-            />
-          </div>
+      <FadeInSection className="max-w-5xl mx-auto px-4 md:px-8">
+        <h2 className="fc-h2 text-fc-warm-white text-center mb-4">{t('product_title')}</h2>
+        <p className="text-fc-warm-white/70 text-center max-w-2xl mx-auto mb-12 leading-relaxed">
+          {t('product_desc')}
+        </p>
 
-          {/* Text */}
-          <div className="md:w-[55%]">
-            <h2 className="fc-h2 text-fc-warm-white mb-6">{t('product_title')}</h2>
-            <p className="text-fc-warm-white/80 text-lg leading-relaxed mb-8">{t('product_desc')}</p>
-
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              {attrs.map((a) => (
-                <div key={a.label} className="flex items-center gap-3">
-                  <a.icon size={20} className="text-fc-green-light flex-shrink-0" />
-                  <span className="fc-label text-fc-warm-white">{a.label}</span>
-                </div>
-              ))}
+        {/* Product with attributes around it */}
+        <div className="relative flex items-center justify-center py-8">
+          {/* Attributes grid around the product */}
+          <div className="grid grid-cols-3 items-center gap-4 md:gap-8 w-full max-w-2xl">
+            {/* Left column attributes */}
+            <div className="flex flex-col gap-12 items-end">
+              <div className="flex flex-col items-center text-center">
+                <Leaf size={28} className="text-fc-green-light mb-2" />
+                <span className="fc-label text-fc-warm-white text-[11px]">{t('product_organic')}</span>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <Shield size={28} className="text-fc-green-light mb-2" />
+                <span className="fc-label text-fc-warm-white text-[11px]">{t('product_ecoviable')}</span>
+              </div>
             </div>
 
-            <div className="flex items-center gap-4 text-fc-warm-white/60 text-sm">
-              <span className="fc-badge fc-badge-brown">CAAE</span>
-              <span className="fc-badge fc-badge-brown">defeder</span>
-              <span>{t('product_cert')}</span>
+            {/* Center product image */}
+            <div className="flex justify-center">
+              <img
+                src={doypackImg}
+                alt="FortCafé BioComplet 1kg"
+                className="w-40 md:w-56"
+                style={{ filter: 'drop-shadow(0 0 40px rgba(90,143,74,0.3))' }}
+              />
+            </div>
+
+            {/* Right column attributes */}
+            <div className="flex flex-col gap-12 items-start">
+              <div className="flex flex-col items-center text-center">
+                <RefreshCw size={28} className="text-fc-green-light mb-2" />
+                <span className="fc-label text-fc-warm-white text-[11px]">{t('product_circular')}</span>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <CircleOff size={28} className="text-fc-green-light mb-2" />
+                <span className="fc-label text-fc-warm-white text-[11px]">{t('product_zero')}</span>
+              </div>
             </div>
           </div>
+        </div>
+
+        {/* Certifications */}
+        <div className="flex items-center justify-center gap-4 mt-8 text-fc-warm-white/60 text-sm">
+          <span className="fc-badge fc-badge-brown">CAAE</span>
+          <span className="fc-badge fc-badge-brown">defeder</span>
+          <span>{t('product_cert')}</span>
         </div>
       </FadeInSection>
     </section>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Coffee, RefreshCw, Sprout, ArrowRight } from 'lucide-react';
+import { Coffee, Sprout, RefreshCw } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FadeInSection from './FadeInSection';
 import CoffeeStain from './CoffeeStain';
@@ -7,41 +7,40 @@ import CoffeeStain from './CoffeeStain';
 const CircularEconomy: React.FC = () => {
   const { t } = useLanguage();
 
-  const steps = [
-    { icon: Coffee, text: t('ec_step1') },
-    { icon: RefreshCw, text: t('ec_step2') },
-    { icon: Sprout, text: t('ec_step3') },
-  ];
-
   return (
     <section id="economia-circular" className="fc-section-cream relative py-20 md:py-28">
       <CoffeeStain className="top-10 right-0" size={200} opacity={0.1} />
+      <CoffeeStain className="bottom-10 left-0" size={160} opacity={0.08} />
       <FadeInSection className="max-w-5xl mx-auto px-4 md:px-8">
-        <h2 className="fc-h2 text-fc-brown-dark text-center mb-16">{t('ec_title')}</h2>
+        <h2 className="fc-h2 text-fc-brown-dark text-center mb-16 italic">{t('ec_title')}</h2>
 
-        {/* 3 Steps */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-4 mb-16">
-          {steps.map((step, i) => (
-            <React.Fragment key={i}>
-              <div className="flex flex-col items-center text-center max-w-xs">
-                <div className="w-16 h-16 rounded-full bg-fc-green-dark flex items-center justify-center mb-4">
-                  <step.icon size={28} className="text-fc-warm-white" />
-                </div>
-                <p className="text-fc-brown-dark text-sm leading-relaxed">{step.text}</p>
-              </div>
-              {i < 2 && (
-                <ArrowRight size={24} className="text-fc-brown-light hidden md:block flex-shrink-0" />
-              )}
-            </React.Fragment>
-          ))}
+        {/* Problem + Solution layout */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 mb-16">
+          {/* Problem */}
+          <div className="flex flex-col items-center text-center max-w-xs">
+            <div className="w-20 h-20 rounded-full bg-fc-brown-dark/10 flex items-center justify-center mb-4">
+              <Coffee size={36} className="text-fc-brown-light" />
+            </div>
+            <h3 className="font-display italic text-fc-brown-dark text-xl mb-2">{t('ec_problem_title')}</h3>
+            <p className="text-fc-brown-dark/70 text-sm leading-relaxed">{t('ec_problem_text')}</p>
+          </div>
+
+          {/* Central circular arrow icon */}
+          <div className="flex-shrink-0">
+            <div className="w-16 h-16 rounded-full bg-fc-green-dark flex items-center justify-center">
+              <RefreshCw size={32} className="text-fc-warm-white" />
+            </div>
+          </div>
+
+          {/* Solution */}
+          <div className="flex flex-col items-center text-center max-w-xs">
+            <div className="w-20 h-20 rounded-full bg-fc-green-dark/10 flex items-center justify-center mb-4">
+              <Sprout size={36} className="text-fc-green-dark" />
+            </div>
+            <h3 className="font-display italic text-fc-green-dark text-xl mb-2">{t('ec_solution_title')}</h3>
+            <p className="text-fc-brown-dark/70 text-sm leading-relaxed">{t('ec_solution_text')}</p>
+          </div>
         </div>
-
-        {/* Quote */}
-        <blockquote className="text-center mb-10">
-          <p className="font-display italic text-fc-brown-dark text-2xl md:text-3xl leading-relaxed max-w-3xl mx-auto">
-            "{t('ec_quote')}"
-          </p>
-        </blockquote>
 
         <p className="text-center text-fc-brown-dark/80 max-w-2xl mx-auto mb-8 leading-relaxed">
           {t('ec_narrative')}
