@@ -3,42 +3,49 @@ import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
 import doypackImg from '@/assets/doypack-fortcafe.jpg';
 import heroProductBg from '@/assets/hero-product-bg.jpg';
+import fieldsBg from '@/assets/fields-bg.jpg';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   return (
     <section id="inicio" className="relative">
-      {/* === TOP SECTION — Sage green with logo === */}
+      {/* === TOP SECTION — Fields background with logo === */}
       <div
-        className="relative flex flex-col items-center justify-center pt-24 pb-8 md:pt-28 md:pb-12"
-        style={{ backgroundColor: '#A8B89A' }}
+        className="relative flex flex-col items-center justify-center pt-24 pb-12 md:pt-28 md:pb-16"
+        style={{ minHeight: '60vh' }}
       >
-        {/* 1kg indicator top right */}
+        {/* Fields background */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${fieldsBg})` }}
+        />
+        {/* Soft overlay to let logo stand out */}
+        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(168, 184, 154, 0.55)' }} />
+
+        {/* 1kg indicator */}
         <span
-          className="absolute top-24 right-8 md:top-28 md:right-16 font-display font-bold"
+          className="absolute top-24 right-8 md:top-28 md:right-16 font-display font-bold relative z-10"
           style={{ color: '#2C1A0E', fontSize: 'clamp(18px, 3vw, 28px)' }}
         >
           1kg
         </span>
 
         {/* Large centered logo */}
-        <Logo size="lg" className="mb-4" />
+        <Logo size="lg" className="mb-4 relative z-10" />
       </div>
 
-      {/* === DARK PRODUCT BAND — coffee grounds, doypack, text overlay === */}
+      {/* === DARK PRODUCT BAND === */}
       <div
         className="relative flex flex-col items-center justify-center overflow-hidden"
         style={{ minHeight: '50vh' }}
       >
-        {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroProductBg})` }}
         />
         <div className="absolute inset-0 bg-black/30" />
 
-        {/* Doypack product image */}
         <div className="relative z-10 flex flex-col items-center text-center px-4 py-12 md:py-16">
           <img
             src={doypackImg}
@@ -47,7 +54,6 @@ const Hero: React.FC = () => {
             style={{ filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.4))' }}
           />
 
-          {/* Large title overlay */}
           <h1
             className="font-display font-bold uppercase text-center leading-none"
             style={{

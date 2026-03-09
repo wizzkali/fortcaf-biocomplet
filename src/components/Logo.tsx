@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImg from '@/assets/logo-fortcafe.jpg';
+import logoImg from '@/assets/logo-fortcafe.png';
 
 interface LogoProps {
   size?: 'sm' | 'lg';
