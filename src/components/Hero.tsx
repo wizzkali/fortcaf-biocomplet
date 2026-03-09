@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
     <section id="inicio" className="relative">
       {/* === TOP SECTION — Forest background with clean logo === */}
       <div
-        className="relative flex flex-col items-center justify-center pt-24 pb-12 md:pt-28 md:pb-16"
+        className="relative flex flex-col items-center justify-center pt-16 pb-12 md:pt-20 md:pb-16"
         style={{ minHeight: '60vh' }}
       >
         {/* Forest background as img for reliable loading */}
