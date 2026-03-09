@@ -25,13 +25,6 @@ const Hero: React.FC = () => {
         {/* Subtle dark overlay for depth and legibility */}
         <div className="absolute inset-0 bg-black/20" />
 
-        {/* 1kg indicator */}
-        <span
-          className="absolute top-24 right-8 md:top-28 md:right-16 font-display font-bold z-10"
-          style={{ color: '#FAF6EE', fontSize: 'clamp(18px, 3vw, 28px)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
-        >
-          1kg
-        </span>
 
         {/* Clean logo floating over forest */}
         <Logo size="lg" className="mb-4 z-10" />
