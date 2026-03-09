@@ -14,7 +14,7 @@ const Crops: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="fc-section-cream py-20 md:py-28">
+    <section id="cultivos" className="fc-section-cream py-20 md:py-28">
       <FadeInSection className="max-w-5xl mx-auto px-4 md:px-8">
         <h2 className="fc-h2 text-fc-brown-dark text-center mb-2">{t('crops_title')}</h2>
         <p className="text-center text-fc-green-dark font-medium mb-12">{t('crops_subtitle')}</p>
