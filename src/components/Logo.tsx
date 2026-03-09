@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImg from '@/assets/logo-fortcafe.png';
+import logoImg from '@/assets/logo-fortcafe.jpg';
 
 interface LogoProps {
   size?: 'sm' | 'lg';
@@ -14,6 +14,7 @@ const Logo: React.FC<LogoProps> = ({ size = 'sm', className = '' }) => {
       <img
         src={logoImg}
         alt="FortCafé BioComplet"
+        className="rounded-lg"
         style={{ width: w, height: 'auto', objectFit: 'contain' }}
       />
     </div>
