@@ -3,35 +3,35 @@ import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
 import doypackImg from '@/assets/doypack-fortcafe.jpg';
 import heroProductBg from '@/assets/hero-product-bg.jpg';
-import fieldsBg from '@/assets/fields-bg.jpg';
+import forestBg from '@/assets/forest-bg.jpg';
 
 const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   return (
     <section id="inicio" className="relative">
-      {/* === TOP SECTION — Fields background with logo === */}
+      {/* === TOP SECTION — Forest background with circular logo === */}
       <div
         className="relative flex flex-col items-center justify-center pt-24 pb-12 md:pt-28 md:pb-16"
         style={{ minHeight: '60vh' }}
       >
-        {/* Fields background */}
+        {/* Forest background */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${fieldsBg})` }}
+          style={{ backgroundImage: `url(${forestBg})` }}
         />
-        {/* Soft overlay to let logo stand out */}
-        {/* No overlay — just the fields background */}
+        {/* Subtle dark overlay for depth */}
+        <div className="absolute inset-0 bg-black/15" />
 
         {/* 1kg indicator */}
         <span
           className="absolute top-24 right-8 md:top-28 md:right-16 font-display font-bold relative z-10"
-          style={{ color: '#2C1A0E', fontSize: 'clamp(18px, 3vw, 28px)' }}
+          style={{ color: '#FAF6EE', fontSize: 'clamp(18px, 3vw, 28px)', textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}
         >
           1kg
         </span>
 
-        {/* Large centered logo */}
+        {/* Large centered circular logo with glow */}
         <Logo size="lg" className="mb-4 relative z-10" />
       </div>
 
