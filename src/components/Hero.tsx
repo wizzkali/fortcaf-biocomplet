@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
           style={{ backgroundImage: `url(${fieldsBg})` }}
         />
         {/* Soft overlay to let logo stand out */}
-        <div className="absolute inset-0" style={{ backgroundColor: 'rgba(168, 184, 154, 0.55)' }} />
+        {/* No overlay — just the fields background */}
 
         {/* 1kg indicator */}
         <span
