@@ -21,12 +21,8 @@ const Logo: React.FC<LogoProps> = ({ size = 'sm', className = '' }) => {
       <img
         src={logoImg}
         alt="FortCafé BioComplet"
-        style={{
-          width: w,
-          height: 'auto',
-          objectFit: 'contain',
-          mixBlendMode: 'multiply',
-        }}
+        className="mix-blend-multiply"
+        style={{ width: w, height: 'auto', objectFit: 'contain' }}
       />
     </div>
   );
