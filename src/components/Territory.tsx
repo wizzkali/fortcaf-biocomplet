@@ -1,4 +1,5 @@
 import React from 'react';
+import { Sprout } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FadeInSection from './FadeInSection';
 import CoffeeStain from './CoffeeStain';
@@ -32,5 +33,3 @@ const Territory: React.FC = () => {
 };
 
 export default Territory;
-
-import { Sprout } from 'lucide-react';
