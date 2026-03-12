@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
-import doypackImg from '@/assets/doypack-hero.png';
+import doypackImg from '@/assets/doypack-front.png';
 import heroProductBg from '@/assets/hero-product-bg.jpg';
 import forestBg from '@/assets/hero-forest.jpg';
 
@@ -41,9 +41,9 @@ const Hero: React.FC = () => {
         <div className="relative z-10 flex flex-col items-center text-center px-4 py-12 md:py-16">
           <img
             src={doypackImg}
-            alt="FortCafé BioComplet 1kg doypack"
-            className="w-44 md:w-64 mb-4"
-            style={{ filter: 'drop-shadow(0 8px 32px rgba(0,0,0,0.5))' }}
+            alt="FortCafé BioComplet 1kg"
+            className="w-48 md:w-64 lg:w-72 mx-auto mb-6"
+            style={{ filter: 'drop-shadow(0 8px 32px rgba(90,143,74,0.3))' }}
           />
 
           <h1
