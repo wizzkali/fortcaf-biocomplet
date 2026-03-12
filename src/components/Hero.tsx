@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
-import doypackImg from '@/assets/doypack-front.png';
+import doypackImg from '@/assets/doypack-front-transparent.png';
 import heroProductBg from '@/assets/hero-product-bg.jpg';
 import forestBg from '@/assets/hero-forest.jpg';
 
@@ -45,7 +45,6 @@ const Hero: React.FC = () => {
             className="w-72 md:w-88 lg:w-[26rem] mx-auto mb-6"
           style={{
             filter: 'drop-shadow(0 12px 40px rgba(90,143,74,0.35))',
-            mixBlendMode: 'multiply' as const,
           }}
           />
 
