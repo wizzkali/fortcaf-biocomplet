@@ -17,7 +17,6 @@ const Collaborate: React.FC = () => {
   const cards = [
     {
       icon: Coffee,
-      emoji: '☕',
       badge: t('colab_restaurant_badge'),
       h3: t('colab_restaurant_h3'),
       text: t('colab_restaurant_text'),
@@ -26,7 +25,6 @@ const Collaborate: React.FC = () => {
     },
     {
       icon: Store,
-      emoji: '🏪',
       badge: t('colab_store_badge'),
       h3: t('colab_store_h3'),
       text: t('colab_store_text'),
@@ -35,7 +33,6 @@ const Collaborate: React.FC = () => {
     },
     {
       icon: Truck,
-      emoji: '🚛',
       badge: t('colab_distributor_badge'),
       h3: t('colab_distributor_h3'),
       text: t('colab_distributor_text'),
@@ -44,7 +41,6 @@ const Collaborate: React.FC = () => {
     },
     {
       icon: Tractor,
-      emoji: '🌾',
       badge: t('colab_farmer_badge'),
       h3: t('colab_farmer_h3'),
       text: t('colab_farmer_text'),
