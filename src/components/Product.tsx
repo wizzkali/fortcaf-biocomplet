@@ -1,5 +1,6 @@
 import React from 'react';
 import { Leaf, RefreshCw, Shield, CircleOff } from 'lucide-react';
+import caaeLogoImg from '@/assets/caae-logo.png';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FadeInSection from './FadeInSection';
 import doypackImg from '@/assets/doypack-shop.png';
@@ -64,9 +65,7 @@ const Product: React.FC = () => {
 
         {/* Certifications */}
         <div className="flex items-center justify-center gap-4 mt-8">
-          <div className="flex items-center justify-center w-14 h-14 rounded-full bg-green-700 border-2 border-green-900">
-            <span className="text-white font-bold text-sm tracking-wide">CAAE</span>
-          </div>
+          <img src={caaeLogoImg} alt="CAAE Certificación Ecológica" className="h-14 w-auto" />
           <div className="text-fc-warm-white/70 text-sm">
             <span className="block font-semibold text-fc-warm-white">Certificación Ecológica</span>
             <span>{t('product_cert')}</span>
