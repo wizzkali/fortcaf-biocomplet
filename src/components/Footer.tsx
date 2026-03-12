@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from './Logo';
+import caaeLogoImg from '@/assets/caae-logo.png';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const footerLinks = [
