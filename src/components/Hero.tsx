@@ -61,10 +61,10 @@ const Hero: React.FC = () => {
           <p
             className="font-body font-semibold mt-3 max-w-md"
             style={{
-              color: '#FAF6EE',
+              color: '#5A8F4A',
               fontSize: 'clamp(13px, 2.2vw, 18px)',
               letterSpacing: '0.03em',
-              textShadow: '0 1px 8px rgba(0,0,0,0.3)',
+              textShadow: '0 1px 8px rgba(0,0,0,0.15)',
             }}
           >
             {t('hero_desc')}
