@@ -180,7 +180,7 @@ export const translations = {
     nav_solicita: "Sol·licita informació",
     hero_tagline: "Nodrint avui, cuidant el demà",
     hero_claim: "Del Residu al Recurs",
-    hero_desc: "El fertilitzant orgànic certificat que neix del cafè i torna al camp.",
+    hero_desc: "Fertilitzant NPK 6-4-4 amb residu de cafè obtingut dels locals d'hostaleria de Lleida",
     hero_cta: "Veure la botiga",
     hero_cta2: "Conèixer el projecte",
     ec_title: "El Problema + Solució",
