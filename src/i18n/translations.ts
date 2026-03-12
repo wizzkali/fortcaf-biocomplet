@@ -183,7 +183,7 @@ export const translations = {
     hero_desc: "Fertilitzant NPK 6-4-4 amb residu de cafè obtingut dels locals d'hostaleria de Lleida",
     hero_cta: "Veure la botiga",
     hero_cta2: "Conèixer el projecte",
-    ec_title: "El Problema + Solució",
+    ec_title: "El Problema = Solució",
     ec_quote: "Cada tassa de cafè que es serveix a Lleida pot convertir-se en vida per al teu cultiu.",
     ec_step1: "Bars i restaurants de Lleida generen pòsits cada dia",
     ec_step2: "Els recollim, els estabilitzem, els convertim en pellet NPK 6-4-4",
