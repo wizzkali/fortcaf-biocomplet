@@ -195,7 +195,7 @@ export const translations = {
     ec_solution_title: "La nostra solució",
     ec_solution_text: "Cada tassa de cafè pot convertir-se en vida per al teu cultiu.",
     product_title: "FortCafé BioComplet — NPK 6-4-4",
-    product_desc: "Fertilitzant orgànic en pellet certificat CAAE i defeder. Fabricat amb pòsits de cafè i farina d'os. L'únic de la seva categoria a Catalunya. Alliberament progressiu de nutrients per a una agricultura més sostenible.",
+    product_desc: "Fertilitzant orgànic en pellet certificat CAAE. Fabricat amb pòsits de cafè i farina d'os. L'únic de la seva categoria a Catalunya. Alliberament progressiu de nutrients per a una agricultura més sostenible.",
     product_organic: "ORGÀNIC",
     product_circular: "ECONOMIA CIRCULAR",
     product_ecoviable: "ECO-VIABLE",
