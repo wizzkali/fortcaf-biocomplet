@@ -49,10 +49,10 @@ const Hero: React.FC = () => {
           <h1
             className="font-display font-bold uppercase text-center leading-none"
             style={{
-              color: '#FAF6EE',
+              color: '#5A8F4A',
               fontSize: 'clamp(32px, 7vw, 64px)',
               letterSpacing: '0.02em',
-              textShadow: '0 2px 12px rgba(0,0,0,0.4)',
+              textShadow: '0 2px 12px rgba(0,0,0,0.2)',
             }}
           >
             FORTCAFÉ<br />BIOCOMPLET
