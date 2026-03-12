@@ -38,13 +38,15 @@ const Hero: React.FC = () => {
         />
         <div className="absolute inset-0 bg-black/30" />
 
-        <div className="relative z-10 flex flex-col items-center text-center px-4 py-12 md:py-16">
-          <img
-            src={doypackImg}
-            alt="FortCafé BioComplet 1kg"
-            className="w-64 md:w-80 lg:w-96 mx-auto mb-6"
-            style={{ filter: 'drop-shadow(0 12px 40px rgba(90,143,74,0.35))', mixBlendMode: 'multiply' as const }}
-          />
+        {/* Doypack image - outside z-10 container so mix-blend-mode works */}
+        <img
+          src={doypackImg}
+          alt="FortCafé BioComplet 1kg"
+          className="relative z-10 w-64 md:w-80 lg:w-96 mx-auto mt-12 md:mt-16"
+          style={{ mixBlendMode: 'multiply' as const }}
+        />
+
+        <div className="relative z-10 flex flex-col items-center text-center px-4 pb-12 md:pb-16">
 
           <h1
             className="font-display font-bold uppercase text-center leading-none"
