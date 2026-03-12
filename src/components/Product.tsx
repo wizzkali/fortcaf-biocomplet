@@ -1,5 +1,6 @@
 import React from 'react';
 import { Leaf, RefreshCw, Shield, CircleOff } from 'lucide-react';
+import caaeLogoImg from '@/assets/caae-logo.png';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FadeInSection from './FadeInSection';
 import doypackImg from '@/assets/doypack-shop.png';
