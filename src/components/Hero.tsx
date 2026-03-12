@@ -39,11 +39,11 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative z-10 flex flex-col items-center text-center px-4 py-12 md:py-16">
-          <div className="border-4 border-[#5A8F4A] ring-4 ring-[#D4AF37] rounded-2xl p-2 bg-[#3E2723] inline-block mb-6">
+          <div className="flex flex-col items-center justify-center border-4 border-[#5A8F4A] ring-4 ring-[#D4AF37] rounded-2xl p-2 bg-[#3E2723] mb-6">
             <img
               src={doypackImg}
-              alt="FortCafé BioComplet 1kg"
-              className="w-64 md:w-80 lg:w-96 block"
+              alt="FortCafé BioComplet"
+              className="w-48 md:w-64 block"
               style={{
                 filter: 'drop-shadow(0 12px 40px rgba(90,143,74,0.35))',
               }}
