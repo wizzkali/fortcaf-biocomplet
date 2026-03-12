@@ -45,7 +45,6 @@ const Hero: React.FC = () => {
             className="w-48 md:w-64 lg:w-72 mx-auto mb-6"
             style={{ filter: 'drop-shadow(0 8px 32px rgba(90,143,74,0.3))' }}
           />
-          />
 
           <h1
             className="font-display font-bold uppercase text-center leading-none"
