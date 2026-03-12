@@ -2,7 +2,7 @@ import React from 'react';
 import { Leaf, RefreshCw, Shield, CircleOff } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FadeInSection from './FadeInSection';
-import doypackImg from '@/assets/doypack-fortcafe.jpg';
+import doypackImg from '@/assets/doypack-front.png';
 
 const Product: React.FC = () => {
   const { t } = useLanguage();
