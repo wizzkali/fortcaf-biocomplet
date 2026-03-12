@@ -86,7 +86,7 @@ export const translations = {
     colab_store_badge: "VIVEROS / TIENDAS",
     colab_store_h3: "¿Quieres vender nuestro producto en tu establecimiento o negocio?",
     colab_store_text: "Viveros, tiendas de jardinería, cooperativas agrícolas y comercios especializados. Te ofrecemos condiciones especiales de reventa y material de punto de venta.",
-    colab_distributor_badge: "DISTRIBUCIÓN / LOGÍSTICA",
+    colab_distributor_badge: "DISTRIBUCIÓN",
     colab_distributor_h3: "¿Quieres distribuir FortCafé en tu zona?",
     colab_distributor_text: "Buscamos partners de distribución en Cataluña y Aragón. Contacta para conocer las condiciones.",
     colab_farmer_badge: "AGRICULTORES / COOPERATIVAS",
