@@ -83,7 +83,7 @@ export const translations = {
     colab_restaurant_badge: "HOSTELERÍA / VENDING",
     colab_restaurant_h3: "¿Generas posos de café?",
     colab_restaurant_text: "Recogemos tus posos de café de forma gratuita. A cambio, tu negocio recibe nuestro Sello de Sostenibilidad FortCafé — puedes mostrarlo en tu local y en tus redes como parte de tu compromiso ecológico.",
-    colab_store_badge: "VIVEROS / TIENDAS / COOPERATIVAS",
+    colab_store_badge: "VIVEROS / TIENDAS",
     colab_store_h3: "¿Quieres vender nuestro producto en tu establecimiento o negocio?",
     colab_store_text: "Viveros, tiendas de jardinería, cooperativas agrícolas y comercios especializados. Te ofrecemos condiciones especiales de reventa y material de punto de venta.",
     colab_distributor_badge: "DISTRIBUCIÓN / LOGÍSTICA",
