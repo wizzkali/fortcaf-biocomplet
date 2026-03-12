@@ -45,7 +45,6 @@ const Hero: React.FC = () => {
             className="w-72 md:w-88 lg:w-[26rem] mx-auto mb-6"
           style={{
             filter: 'drop-shadow(0 12px 40px rgba(90,143,74,0.35))',
-            mixBlendMode: 'multiply' as const,
           }}
           />
 
