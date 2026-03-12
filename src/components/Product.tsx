@@ -44,7 +44,7 @@ const Product: React.FC = () => {
                 src={doypackImg}
                 alt="FortCafé BioComplet 1kg"
                 className="w-40 md:w-56"
-                style={{ filter: 'drop-shadow(0 0 40px rgba(90,143,74,0.3))' }}
+                style={{ filter: 'drop-shadow(0 0 40px rgba(90,143,74,0.3))', mixBlendMode: 'multiply' as const }}
               />
             </div>
 
