@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
             src={doypackImg}
             alt="FortCafé BioComplet 1kg"
             className="w-48 md:w-64 lg:w-72 mx-auto mb-6"
-            style={{ filter: 'drop-shadow(0 8px 32px rgba(90,143,74,0.3))' }}
+            style={{ filter: 'drop-shadow(0 8px 32px rgba(90,143,74,0.25))', mixBlendMode: 'multiply' as const }}
           />
 
           <h1
