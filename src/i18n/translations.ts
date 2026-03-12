@@ -80,7 +80,7 @@ export const translations = {
     tech_biocomplet_raw: "Materias primas: Posos de café · Harina de carne y hueso",
     colab_title: "Colabora con FortCafé",
     colab_subtitle: "Únete al proyecto desde tu posición en la cadena de valor",
-    colab_restaurant_badge: "HOSTELERÍA / OFICINAS",
+    colab_restaurant_badge: "HOSTELERÍA / VENDING",
     colab_restaurant_h3: "¿Generas posos de café?",
     colab_restaurant_text: "Recogemos tus posos de café de forma gratuita. A cambio, tu negocio recibe nuestro Sello de Sostenibilidad FortCafé — puedes mostrarlo en tu local y en tus redes como parte de tu compromiso ecológico.",
     colab_store_badge: "VIVEROS / TIENDAS / COOPERATIVAS",
