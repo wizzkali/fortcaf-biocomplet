@@ -39,7 +39,7 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative z-10 flex flex-col items-center text-center px-4 py-12 md:py-16">
-          <div className="border-4 border-[#5A8F4A] ring-4 ring-[#D4AF37] rounded-2xl p-2 bg-white inline-block mb-6">
+          <div className="border-4 border-[#5A8F4A] ring-4 ring-[#D4AF37] rounded-2xl p-2 bg-[#3E2723] inline-block mb-6">
             <img
               src={doypackImg}
               alt="FortCafé BioComplet 1kg"
