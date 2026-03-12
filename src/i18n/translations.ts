@@ -255,7 +255,7 @@ export const translations = {
     colab_store_badge: "VIVERS / BOTIGUES",
     colab_store_h3: "Vols vendre el nostre producte al teu establiment o negoci?",
     colab_store_text: "Vivers, botigues de jardineria, cooperatives agrícoles i comerços especialitzats. T'oferim condicions especials de revenda i material de punt de venda.",
-    colab_distributor_badge: "DISTRIBUCIÓ / LOGÍSTICA",
+    colab_distributor_badge: "DISTRIBUCIÓ",
     colab_distributor_h3: "Vols distribuir FortCafé a la teva zona?",
     colab_distributor_text: "Busquem partners de distribució a Catalunya i Aragó. Contacta per conèixer les condicions.",
     colab_farmer_badge: "AGRICULTORS / COOPERATIVES",
