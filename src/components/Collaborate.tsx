@@ -59,8 +59,7 @@ const Collaborate: React.FC = () => {
           {cards.map((card) => (
             <div key={card.profile} className="fc-card bg-fc-brown-mid/40 p-8 border border-fc-brown-mid/60">
               <div className="flex items-center gap-3 mb-3">
-                <card.icon size={24} className="text-fc-green-light" />
-                <span className="text-2xl">{card.emoji}</span>
+                <card.icon size={28} className="text-fc-green-light" />
               </div>
               <span className="fc-badge fc-badge-green mb-3 inline-block">{card.badge}</span>
               <h3 className="font-display font-bold text-lg text-fc-warm-white mb-3">{card.h3}</h3>

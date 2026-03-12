@@ -26,7 +26,7 @@ const Crops: React.FC = () => {
               key={crop.key}
               className="fc-card bg-fc-warm-white p-6 flex flex-col items-center text-center cursor-default"
             >
-              <span className="text-4xl mb-3">{crop.emoji}</span>
+              <crop.icon size={32} className="text-fc-green-dark mb-3" />
               <span className="font-bold text-fc-brown-dark text-sm">{t(crop.key)}</span>
             </div>
           ))}
