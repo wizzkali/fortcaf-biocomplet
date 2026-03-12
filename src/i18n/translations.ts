@@ -253,7 +253,7 @@ export const translations = {
     colab_restaurant_h3: "Generes pòsits de cafè?",
     colab_restaurant_text: "Recollim els teus pòsits de cafè de forma gratuïta. A canvi, el teu negoci rep el nostre Segell de Sostenibilitat FortCafé — pots mostrar-lo al teu local i a les xarxes com a part del teu compromís ecològic.",
     colab_store_badge: "VIVERS / BOTIGUES / COOPERATIVES",
-    colab_store_h3: "Vols distribuir-lo al teu establiment?",
+    colab_store_h3: "Vols vendre el nostre producte al teu establiment o negoci?",
     colab_store_text: "Vivers, botigues de jardineria, cooperatives agrícoles i comerços especialitzats. T'oferim condicions especials de revenda i material de punt de venda.",
     colab_distributor_badge: "DISTRIBUCIÓ / LOGÍSTICA",
     colab_distributor_h3: "Vols distribuir FortCafé a la teva zona?",

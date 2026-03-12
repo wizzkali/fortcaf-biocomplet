@@ -63,10 +63,14 @@ const Product: React.FC = () => {
         </div>
 
         {/* Certifications */}
-        <div className="flex items-center justify-center gap-4 mt-8 text-fc-warm-white/60 text-sm">
-          <span className="fc-badge fc-badge-brown">CAAE</span>
-          <span className="fc-badge fc-badge-brown">defeder</span>
-          <span>{t('product_cert')}</span>
+        <div className="flex items-center justify-center gap-4 mt-8">
+          <div className="flex items-center justify-center w-14 h-14 rounded-full bg-green-700 border-2 border-green-900">
+            <span className="text-white font-bold text-sm tracking-wide">CAAE</span>
+          </div>
+          <div className="text-fc-warm-white/70 text-sm">
+            <span className="block font-semibold text-fc-warm-white">Certificación Ecológica</span>
+            <span>{t('product_cert')}</span>
+          </div>
         </div>
       </FadeInSection>
     </section>
