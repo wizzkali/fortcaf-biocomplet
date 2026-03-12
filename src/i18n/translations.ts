@@ -26,7 +26,7 @@ export const translations = {
     ec_solution_title: "Nuestra solución",
     ec_solution_text: "Cada taza de café puede convertirse en vida para tu cultivo.",
     product_title: "FortCafé BioComplet — NPK 6-4-4",
-    product_desc: "Fertilizante orgánico en pellet certificado CAAE y defeder. Fabricado con posos de café y harina de hueso. El único de su categoría en Cataluña. Liberación progresiva de nutrientes para una agricultura más sostenible.",
+    product_desc: "Fertilizante orgánico en pellet certificado CAAE. Fabricado con posos de café y harina de hueso. El único de su categoría en Cataluña. Liberación progresiva de nutrientes para una agricultura más sostenible.",
     product_organic: "ORGÁNICO",
     product_circular: "ECONOMÍA CIRCULAR",
     product_ecoviable: "ECO-VIABLE",
