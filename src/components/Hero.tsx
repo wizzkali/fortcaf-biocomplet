@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-white/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-white/90" />
 
         <div className="relative z-10 flex flex-col items-center text-center px-4 py-12 md:py-16">
           <img
