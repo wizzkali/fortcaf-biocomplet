@@ -1,13 +1,14 @@
 import React from 'react';
+import { TreeDeciduous, Droplets, Grape, Apple, Salad } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FadeInSection from './FadeInSection';
 
 const crops = [
-  { emoji: '🌳', key: 'crops_almond' as const },
-  { emoji: '🫒', key: 'crops_olive' as const },
-  { emoji: '🍇', key: 'crops_vine' as const },
-  { emoji: '🍎', key: 'crops_fruit' as const },
-  { emoji: '🥬', key: 'crops_garden' as const },
+  { icon: TreeDeciduous, key: 'crops_almond' as const },
+  { icon: Droplets, key: 'crops_olive' as const },
+  { icon: Grape, key: 'crops_vine' as const },
+  { icon: Apple, key: 'crops_fruit' as const },
+  { icon: Salad, key: 'crops_garden' as const },
 ];
 
 const Crops: React.FC = () => {
@@ -25,7 +26,7 @@ const Crops: React.FC = () => {
               key={crop.key}
               className="fc-card bg-fc-warm-white p-6 flex flex-col items-center text-center cursor-default"
             >
-              <span className="text-4xl mb-3">{crop.emoji}</span>
+              <crop.icon size={32} className="text-fc-green-dark mb-3" />
               <span className="font-bold text-fc-brown-dark text-sm">{t(crop.key)}</span>
             </div>
           ))}

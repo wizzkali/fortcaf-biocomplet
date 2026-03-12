@@ -17,7 +17,6 @@ const Collaborate: React.FC = () => {
   const cards = [
     {
       icon: Coffee,
-      emoji: '☕',
       badge: t('colab_restaurant_badge'),
       h3: t('colab_restaurant_h3'),
       text: t('colab_restaurant_text'),
@@ -26,7 +25,6 @@ const Collaborate: React.FC = () => {
     },
     {
       icon: Store,
-      emoji: '🏪',
       badge: t('colab_store_badge'),
       h3: t('colab_store_h3'),
       text: t('colab_store_text'),
@@ -35,7 +33,6 @@ const Collaborate: React.FC = () => {
     },
     {
       icon: Truck,
-      emoji: '🚛',
       badge: t('colab_distributor_badge'),
       h3: t('colab_distributor_h3'),
       text: t('colab_distributor_text'),
@@ -44,7 +41,6 @@ const Collaborate: React.FC = () => {
     },
     {
       icon: Tractor,
-      emoji: '🌾',
       badge: t('colab_farmer_badge'),
       h3: t('colab_farmer_h3'),
       text: t('colab_farmer_text'),
@@ -63,8 +59,7 @@ const Collaborate: React.FC = () => {
           {cards.map((card) => (
             <div key={card.profile} className="fc-card bg-fc-brown-mid/40 p-8 border border-fc-brown-mid/60">
               <div className="flex items-center gap-3 mb-3">
-                <card.icon size={24} className="text-fc-green-light" />
-                <span className="text-2xl">{card.emoji}</span>
+                <card.icon size={28} className="text-fc-green-light" />
               </div>
               <span className="fc-badge fc-badge-green mb-3 inline-block">{card.badge}</span>
               <h3 className="font-display font-bold text-lg text-fc-warm-white mb-3">{card.h3}</h3>
