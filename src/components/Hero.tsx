@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
-import doypackImg from '@/assets/doypack-fortcafe.jpg';
+import doypackImg from '@/assets/doypack-hero.png';
 import heroProductBg from '@/assets/hero-product-bg.jpg';
 import forestBg from '@/assets/hero-forest.jpg';
 
@@ -15,18 +15,13 @@ const Hero: React.FC = () => {
         className="relative flex flex-col items-center justify-center pt-10 pb-12 md:pt-14 md:pb-16"
         style={{ minHeight: '60vh' }}
       >
-        {/* Forest background as img for reliable loading */}
         <img
           src={forestBg}
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        {/* Subtle overlay for depth and color saturation */}
         <div className="absolute inset-0 bg-black/10" />
-
-
-        {/* Clean logo floating over forest */}
         <Logo size="lg" className="mb-4 z-10" />
       </div>
 
@@ -47,8 +42,8 @@ const Hero: React.FC = () => {
           <img
             src={doypackImg}
             alt="FortCafé BioComplet 1kg doypack"
-            className="w-32 md:w-44 mb-4 drop-shadow-2xl"
-            style={{ filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.4))' }}
+            className="w-44 md:w-64 mb-4"
+            style={{ filter: 'drop-shadow(0 8px 32px rgba(0,0,0,0.5))' }}
           />
 
           <h1
@@ -64,15 +59,15 @@ const Hero: React.FC = () => {
           </h1>
 
           <p
-            className="font-body font-semibold uppercase mt-3"
+            className="font-body font-semibold mt-3 max-w-md"
             style={{
               color: '#FAF6EE',
-              fontSize: 'clamp(14px, 2.5vw, 22px)',
-              letterSpacing: '0.06em',
+              fontSize: 'clamp(13px, 2.2vw, 18px)',
+              letterSpacing: '0.03em',
               textShadow: '0 1px 8px rgba(0,0,0,0.3)',
             }}
           >
-            FERTILIZANTE ORGÁNICO DE<br />CAFÉ 100% ECOLÓGICO
+            {t('hero_desc')}
           </p>
         </div>
       </div>
