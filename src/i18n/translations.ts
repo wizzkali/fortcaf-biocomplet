@@ -11,7 +11,7 @@ export const translations = {
     nav_solicita: "Solicita información",
     hero_tagline: "Nutriendo hoy, cuidando el mañana",
     hero_claim: "De Residuo a Recurso",
-    hero_desc: "El fertilizante orgánico certificado que nace del café y vuelve al campo.",
+    hero_desc: "Fertilizante NPK 6-4-4 con residuo de café obtenido de los locales de hostelería de Lleida",
     hero_cta: "Ver la tienda",
     hero_cta2: "Conocer el proyecto",
     ec_title: "El Problema + Solución",
