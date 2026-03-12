@@ -23,9 +23,7 @@ const Footer: React.FC = () => {
             <Logo size="sm" className="mb-4" />
             <p className="text-fc-warm-white/60 text-sm italic">{t('footer_tagline')}</p>
             <div className="flex gap-3 mt-4 items-center">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-green-700 border border-green-900">
-                <span className="text-white font-bold text-[9px] tracking-wide">CAAE</span>
-              </div>
+              <img src={caaeLogoImg} alt="CAAE Certificación Ecológica" className="h-10 w-auto" />
               <span className="text-fc-warm-white/50 text-[10px]">Certificación Ecológica</span>
             </div>
           </div>
