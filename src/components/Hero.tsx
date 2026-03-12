@@ -42,10 +42,9 @@ const Hero: React.FC = () => {
           <img
             src={doypackImg}
             alt="FortCafé BioComplet 1kg"
-            className="w-72 md:w-88 lg:w-[26rem] mx-auto mb-6 rounded-2xl"
+            className="w-72 md:w-88 lg:w-[26rem] mx-auto mb-6"
             style={{
               filter: 'drop-shadow(0 12px 40px rgba(90,143,74,0.35))',
-              objectFit: 'cover',
             }}
           />
 
