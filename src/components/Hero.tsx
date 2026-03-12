@@ -42,17 +42,17 @@ const Hero: React.FC = () => {
           <img
             src={doypackImg}
             alt="FortCafé BioComplet 1kg"
-            className="w-44 md:w-64 mx-auto mb-6"
-            style={{ filter: 'drop-shadow(0 8px 32px rgba(90,143,74,0.25))' }}
+            className="w-64 md:w-80 lg:w-96 mx-auto mb-6"
+            style={{ filter: 'drop-shadow(0 12px 40px rgba(90,143,74,0.35))' }}
           />
 
           <h1
             className="font-display font-bold uppercase text-center leading-none"
             style={{
-              color: '#FAF6EE',
+              color: '#5A8F4A',
               fontSize: 'clamp(32px, 7vw, 64px)',
               letterSpacing: '0.02em',
-              textShadow: '0 2px 12px rgba(0,0,0,0.4)',
+              textShadow: '0 2px 12px rgba(0,0,0,0.2)',
             }}
           >
             FORTCAFÉ<br />BIOCOMPLET
@@ -61,10 +61,10 @@ const Hero: React.FC = () => {
           <p
             className="font-body font-semibold mt-3 max-w-md"
             style={{
-              color: '#FAF6EE',
+              color: '#5A8F4A',
               fontSize: 'clamp(13px, 2.2vw, 18px)',
               letterSpacing: '0.03em',
-              textShadow: '0 1px 8px rgba(0,0,0,0.3)',
+              textShadow: '0 1px 8px rgba(0,0,0,0.15)',
             }}
           >
             {t('hero_desc')}
