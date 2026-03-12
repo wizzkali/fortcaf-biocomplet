@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
-import doypackImg from '@/assets/doypack-front-transparent.png';
+import doypackImg from '@/assets/doypack-hero-new.png';
 import heroProductBg from '@/assets/hero-product-bg.jpg';
 import forestBg from '@/assets/hero-forest.jpg';
 
