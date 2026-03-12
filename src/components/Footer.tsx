@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-10">
           {/* Col 1: Logo */}
           <div className="flex flex-col items-center md:items-start">
-            <Logo size="sm" className="mb-4" />
+            <Logo size="sm" variant="light" className="mb-4" />
             <p className="text-fc-warm-white/60 text-sm italic">{t('footer_tagline')}</p>
             <div className="flex gap-3 mt-4 items-center">
               <img src={caaeLogoImg} alt="CAAE Certificación Ecológica" className="h-10 w-auto" />
