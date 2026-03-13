@@ -6,37 +6,37 @@
 
 @layer base {
   :root {
-    --background: 30 30% 91%;
-    --foreground: 20 47% 12%;
-    --card: 35 30% 88%;
-    --card-foreground: 20 47% 12%;
-    --popover: 35 40% 95%;
-    --popover-foreground: 20 47% 12%;
-    --primary: 115 33% 31%;
-    --primary-foreground: 40 50% 97%;
-    --secondary: 20 47% 12%;
-    --secondary-foreground: 40 50% 97%;
-    --muted: 35 25% 85%;
-    --muted-foreground: 20 20% 40%;
-    --accent: 115 30% 42%;
-    --accent-foreground: 40 50% 97%;
+    --background: 33 32% 93%;
+    --foreground: 22 50% 11%;
+    --card: 34 35% 90%;
+    --card-foreground: 22 50% 11%;
+    --popover: 36 42% 96%;
+    --popover-foreground: 22 50% 11%;
+    --primary: 120 30% 29%;
+    --primary-foreground: 42 55% 97%;
+    --secondary: 22 50% 11%;
+    --secondary-foreground: 42 55% 97%;
+    --muted: 34 22% 86%;
+    --muted-foreground: 22 18% 38%;
+    --accent: 118 28% 40%;
+    --accent-foreground: 42 55% 97%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 30 20% 78%;
-    --input: 30 20% 78%;
-    --ring: 115 33% 31%;
+    --border: 32 22% 80%;
+    --input: 32 22% 80%;
+    --ring: 120 30% 29%;
     --radius: 1rem;
 
     /* FortCafé custom tokens */
-    --fc-brown-dark: 20 47% 12%;
-    --fc-brown-mid: 20 40% 20%;
-    --fc-brown-light: 20 40% 39%;
-    --fc-green-dark: 115 33% 31%;
-    --fc-green-light: 115 30% 42%;
-    --fc-cream: 36 48% 88%;
-    --fc-beige: 36 30% 83%;
-    --fc-warm-white: 40 50% 97%;
-    --fc-coffee-stain: 30 50% 26%;
+    --fc-brown-dark: 22 50% 11%;
+    --fc-brown-mid: 22 42% 18%;
+    --fc-brown-light: 22 36% 36%;
+    --fc-green-dark: 120 30% 29%;
+    --fc-green-light: 118 28% 40%;
+    --fc-cream: 38 52% 90%;
+    --fc-beige: 36 28% 84%;
+    --fc-warm-white: 42 55% 97%;
+    --fc-coffee-stain: 28 48% 24%;
   }
 }
 
