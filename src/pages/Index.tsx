@@ -4,6 +4,7 @@ import { usePageMeta } from '@/hooks/usePageMeta';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { CartProvider } from '@/contexts/CartContext';
 import SchemaOrg from '@/components/SchemaOrg';
+import ScrollReveal from '@/components/ScrollReveal';
 
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -45,28 +46,49 @@ const Index = () => {
           <WaveSeparator color="#E8D5B0" />
 
           <Suspense fallback={<div />}>
-            <Shop />
-            <WaveSeparator color="#DDD0B8" />
+            {/* === Bento Grid Section === */}
+            <section className="fc-section-cream py-8 md:py-12">
+              <div className="max-w-7xl mx-auto px-4 md:px-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                  {/* Shop — full width hero card */}
+                  <ScrollReveal className="md:col-span-2 rounded-3xl overflow-hidden">
+                    <Shop />
+                  </ScrollReveal>
 
-            <Agriculture />
-            <WaveSeparator color="#E8D5B0" />
+                  {/* Agriculture — full width */}
+                  <ScrollReveal className="md:col-span-2 rounded-3xl overflow-hidden">
+                    <Agriculture />
+                  </ScrollReveal>
 
-            <Crops />
-            <WaveSeparator color="#3D6B35" />
+                  {/* Crops + HowToUse — side by side */}
+                  <ScrollReveal className="rounded-3xl overflow-hidden">
+                    <Crops />
+                  </ScrollReveal>
+                  <ScrollReveal className="rounded-3xl overflow-hidden">
+                    <HowToUse />
+                  </ScrollReveal>
 
-            <HowToUse />
-            <WaveSeparator color="#E8D5B0" />
+                  {/* TechnicalSheet + Territory — side by side */}
+                  <ScrollReveal className="rounded-3xl overflow-hidden">
+                    <TechnicalSheet />
+                  </ScrollReveal>
+                  <ScrollReveal className="rounded-3xl overflow-hidden">
+                    <Territory />
+                  </ScrollReveal>
+                </div>
+              </div>
+            </section>
 
-            <TechnicalSheet />
             <WaveSeparator color="#2C1A0E" />
 
-            <Collaborate />
+            <ScrollReveal>
+              <Collaborate />
+            </ScrollReveal>
             <WaveSeparator color="#E8D5B0" />
 
-            <Territory />
-            <WaveSeparator color="#3D6B35" />
-
-            <Contact />
+            <ScrollReveal>
+              <Contact />
+            </ScrollReveal>
             <WaveSeparator color="#2C1A0E" />
 
             <Footer />

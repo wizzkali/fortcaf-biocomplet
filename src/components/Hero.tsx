@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
             <img
               src={doypackImg}
               alt="FortCafé BioComplet"
-              className="w-56 md:w-80 block"
+              className="w-56 md:w-80 block transition-transform duration-700 hover:scale-105"
               style={{
                 filter: 'drop-shadow(0 12px 40px rgba(0,0,0,0.4))',
               }}
@@ -51,23 +51,23 @@ const Hero: React.FC = () => {
           </div>
 
           <h1
-            className="font-display font-bold uppercase text-center leading-none"
+            className="font-display font-bold uppercase text-center leading-none tracking-wide"
             style={{
               color: '#5A8F4A',
-              fontSize: 'clamp(32px, 7vw, 64px)',
-              letterSpacing: '0.02em',
-              textShadow: '0 2px 12px rgba(0,0,0,0.2)',
+              fontSize: 'clamp(36px, 8vw, 80px)',
+              letterSpacing: '0.04em',
+              textShadow: '0 2px 16px rgba(0,0,0,0.25)',
             }}
           >
             FORTCAFÉ<br />BIOCOMPLET
           </h1>
 
           <p
-            className="font-body font-semibold mt-3 max-w-md"
+            className="font-body font-medium mt-4 max-w-lg tracking-wide"
             style={{
               color: '#5A8F4A',
-              fontSize: 'clamp(13px, 2.2vw, 18px)',
-              letterSpacing: '0.03em',
+              fontSize: 'clamp(14px, 2.5vw, 20px)',
+              letterSpacing: '0.05em',
               textShadow: '0 1px 8px rgba(0,0,0,0.15)',
             }}
           >
