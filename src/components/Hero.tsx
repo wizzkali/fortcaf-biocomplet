@@ -2,91 +2,87 @@ import React from 'react';
 import Logo from './Logo';
 import { useLanguage } from '@/contexts/LanguageContext';
 import doypackImg from '@/assets/doypack-hero-blended.png';
-import heroProductBg from '@/assets/hero-product-bg.jpg';
 import forestBg from '@/assets/hero-forest-test.jpg';
+import heroProductBg from '@/assets/hero-product-bg.jpg';
+
+const BioCompletBadge: React.FC<{ size?: number }> = ({ size = 260 }) => (
+  <svg viewBox="0 0 260 300" width={size} xmlns="http://www.w3.org/2000/svg"
+    style={{ filter: 'drop-shadow(0 8px 32px rgba(0,0,0,0.5))' }}>
+    <defs>
+      <path id="topArcH" d="M130,155 m-108,0 a108,108 0 1,1 216,0"/>
+      <path id="botArcH" d="M 38,185 A 108,108 0 0 0 222,185"/>
+      <marker id="arGH" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
+        <path d="M1,2 L9,6 L1,10" stroke="#8AAF5A" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+      </marker>
+      <marker id="arYH" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
+        <path d="M1,2 L9,6 L1,10" stroke="#D4A820" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+      </marker>
+    </defs>
+    <circle cx="130" cy="155" r="108" fill="#2a1508" opacity="0.95"/>
+    <circle cx="130" cy="155" r="108" fill="none" stroke="rgba(200,158,40,0.35)" strokeWidth="1.5"/>
+    {/* 3 arcos */}
+    <path d="M50,85 A108,108 0 0 1 210,85" fill="none" stroke="#D4A820" strokeWidth="5" strokeLinecap="round" markerEnd="url(#arYH)" opacity="0.9"/>
+    <path d="M215,92 A108,108 0 0 1 170,255" fill="none" stroke="#8AAF5A" strokeWidth="5" strokeLinecap="round" markerEnd="url(#arGH)" opacity="0.9"/>
+    <path d="M90,255 A108,108 0 0 1 45,92" fill="none" stroke="#8AAF5A" strokeWidth="5" strokeLinecap="round" markerEnd="url(#arGH)" opacity="0.9"/>
+    {/* Texto superior en arco */}
+    <text fontFamily="Georgia,serif" fontSize="12" fill="#D4A820" letterSpacing="1" opacity="0.88">
+      <textPath href="#topArcH" startOffset="5%">Fertilizante Orgánico · Economía Circular</textPath>
+    </text>
+    {/* BioComplet */}
+    <text x="130" y="142" textAnchor="middle" fontFamily="'Cormorant Garamond',Georgia,serif" fontSize="46" fontStyle="italic" fontWeight="700" fill="#D4A820" opacity="0.95">Bio</text>
+    <text x="130" y="184" textAnchor="middle" fontFamily="'Cormorant Garamond',Georgia,serif" fontSize="40" fontStyle="italic" fontWeight="700" fill="#D4A820" opacity="0.95">Complet</text>
+    {/* NPK correcto */}
+    <text x="130" y="206" textAnchor="middle" fontFamily="Georgia,serif" fontSize="12.5" fill="#C9A84C" letterSpacing="1.5" opacity="0.82">NPK 6-4-4 · CAAE</text>
+    {/* Texto inferior en arco */}
+    <text fontFamily="Georgia,serif" fontSize="12" fill="#D4A820" letterSpacing="1" opacity="0.88">
+      <textPath href="#botArcH" startOffset="18%">Agricultura Sostenible</textPath>
+    </text>
+  </svg>
+);
 
 const Hero: React.FC = () => {
-  const { t } = useLanguage();
-
   return (
     <section id="inicio" className="relative">
 
-      {/* === TOP — Bosque con logo === */}
+      {/* === BOSQUE + LOGO === */}
       <div
         className="relative flex flex-col items-center justify-center pt-10 pb-12 md:pt-14 md:pb-16"
         style={{ minHeight: '60vh' }}
       >
-        <img src={forestBg} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/10" />
-        <Logo size="lg" className="mb-4 z-10" />
+        <img src={forestBg} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover"/>
+        <div className="absolute inset-0 bg-black/10"/>
+        <Logo size="lg" className="mb-4 z-10"/>
       </div>
 
       {/* === BANDA PRODUCTO === */}
       <div
-        className="relative flex flex-col items-center justify-center overflow-hidden"
-        style={{ minHeight: '55vh' }}
+        className="relative flex items-center justify-center overflow-hidden"
+        style={{ minHeight: '65vh' }}
       >
-        <img src={heroProductBg} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-black/40" />
+        <img src={heroProductBg} alt="" aria-hidden="true" className="absolute inset-0 w-full h-full object-cover"/>
+        <div className="absolute inset-0 bg-black/50"/>
 
-        <div className="relative z-10 flex flex-col items-center justify-center py-12">
+        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 py-10">
 
-          {/* Círculo + doypack centrado encima */}
-          <div className="relative flex items-center justify-center" style={{ width: 320, height: 320 }}>
+          {/* DESKTOP: lado a lado | MÓVIL: columna badge arriba, doypack abajo */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-14">
 
-            {/* SVG círculo alrededor */}
-            <svg
-              viewBox="0 0 320 320"
-              width="320"
-              height="320"
-              className="absolute inset-0"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <defs>
-                <path id="arcText" d="M160,160 m-130,0 a130,130 0 1,1 260,0 a130,130 0 1,1 -260,0"/>
-                <marker id="arr" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-                  <path d="M0,1.5 L7,5 L0,8.5" stroke="#8AAF5A" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                </marker>
-              </defs>
+            {/* Badge izquierda en desktop, arriba en móvil */}
+            <div className="flex items-center justify-center order-1 md:order-1">
+              <BioCompletBadge size={280} />
+            </div>
 
-              {/* Anillo exterior punteado */}
-              <circle cx="160" cy="160" r="150" fill="none" stroke="#C9A84C" stroke-width="1" stroke-dasharray="3 5" opacity="0.35"/>
+            {/* Doypack derecha en desktop, abajo en móvil */}
+            <div className="flex items-center justify-center order-2 md:order-2">
+              <img
+                src={doypackImg}
+                alt="FortCafé BioComplet 1kg"
+                className="w-52 md:w-72"
+                style={{ filter: 'drop-shadow(0 16px 48px rgba(0,0,0,0.65))' }}
+              />
+            </div>
 
-              {/* Anillo principal */}
-              <circle cx="160" cy="160" r="142" fill="none" stroke="#C9A84C" stroke-width="1.5" opacity="0.5"/>
-              <circle cx="160" cy="160" r="136" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.2"/>
-
-              {/* 3 flechas verdes a 120° */}
-              <path d="M168,20 A142,142 0 0 1 275,213" fill="none" stroke="#8AAF5A" stroke-width="3" stroke-linecap="round" marker-end="url(#arr)" opacity="0.9"/>
-              <path d="M275,213 A142,142 0 0 1 45,213" fill="none" stroke="#8AAF5A" stroke-width="3" stroke-linecap="round" marker-end="url(#arr)" opacity="0.9"/>
-              <path d="M45,213 A142,142 0 0 1 168,20" fill="none" stroke="#8AAF5A" stroke-width="3" stroke-linecap="round" marker-end="url(#arr)" opacity="0.9"/>
-
-              {/* Texto circular */}
-              <text font-family="'Cormorant Garamond', Georgia, serif" font-size="13.5" fill="#D4A820" letter-spacing="1.8" opacity="0.9">
-                <textPath href="#arcText" startOffset="3%">
-                  Fertilizante Orgánico · Economía Circular · Agricultura Sostenible ·
-                </textPath>
-              </text>
-
-              {/* NPK correcto — pequeño, en la parte baja visible */}
-              <text x="160" y="294" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#C9A84C" letter-spacing="2" opacity="0.75">
-                NPK 6-4-4 · CAAE
-              </text>
-            </svg>
-
-            {/* Doypack encima, cubriendo el centro */}
-            <img
-              src={doypackImg}
-              alt="FortCafé BioComplet"
-              className="relative z-10"
-              style={{
-                width: '210px',
-                filter: 'drop-shadow(0 12px 40px rgba(0,0,0,0.55))',
-                marginTop: '10px',
-              }}
-            />
           </div>
-
         </div>
       </div>
 
