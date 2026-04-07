@@ -1,4 +1,6 @@
 import React, { lazy, Suspense } from 'react';
+import ErrorBoundary from '@/components/ErrorBoundary';
+import { usePageTitle } from '@/hooks/usePageTitle';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import { CartProvider } from '@/contexts/CartContext';
 
@@ -21,8 +23,11 @@ const Contact      = lazy(() => import('@/components/Contact'));
 const Footer       = lazy(() => import('@/components/Footer'));
 
 const Index = () => {
+  usePageTitle();
+
   return (
     <LanguageProvider>
+      <ErrorBoundary>
       <CartProvider>
         <div className="min-h-screen">
           <Navbar />
@@ -68,6 +73,7 @@ const Index = () => {
           <CheckoutModal />
         </div>
       </CartProvider>
+      </ErrorBoundary>
     </LanguageProvider>
   );
 };

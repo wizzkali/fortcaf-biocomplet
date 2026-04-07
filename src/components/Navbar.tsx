@@ -37,6 +37,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       <nav
+        aria-label="Menú principal"
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
           backgroundColor: scrolled ? 'rgba(168, 184, 154, 0.97)' : 'transparent',
@@ -73,6 +74,8 @@ const Navbar: React.FC = () => {
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="text-fc-brown-dark"
+              aria-expanded={mobileOpen}
+              aria-label={mobileOpen ? "Cerrar menú" : "Abrir menú"}
             >
               {mobileOpen ? '✕' : '☰'}
             </button>
