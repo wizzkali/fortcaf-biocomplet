@@ -8,24 +8,11 @@ const Contact: React.FC = () => {
   const { t } = useLanguage();
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const FORMSPREE = 'https://formspree.io/f/TU_FORM_ID';
-    try {
-      const res = await fetch(FORMSPREE, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: form.name, email: form.email, phone: form.phone, message: form.message }),
-      });
-      if (res.ok) {
-        console.log('FortCafé: formulario enviado OK');
-        setForm({ name: '', email: '', phone: '', message: '' });
-      } else {
-        console.error('FortCafé: Formspree error', res.status);
-      }
-    } catch (err) {
-      console.error('FortCafé: error de red', err);
-    }
+    const msg = `💬 *CONSULTA FORTCAFÉ*\n\n👤 Nombre: ${form.name}\n📧 Email: ${form.email}\n📞 Teléfono: ${form.phone}\n\n📝 Mensaje:\n${form.message}`;
+    window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
+    setForm({ name: '', email: '', phone: '', message: '' });
   };
 
   return (
