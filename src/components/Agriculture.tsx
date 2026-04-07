@@ -29,11 +29,11 @@ const Agriculture: React.FC = () => {
     <section id="agricultura" className="fc-section-beige py-20 md:py-28">
       <FadeInSection className="max-w-5xl mx-auto px-4 md:px-8">
         <h2 className="fc-h2 text-fc-brown-dark text-center mb-2">{t('agri_title')}</h2>
-        <p className="text-center text-fc-brown-dark/70 mb-12">{t('agri_subtitle')}</p>
+        <p className="text-center text-fc-brown-dark/70 font-medium tracking-wide mb-12">{t('agri_subtitle')}</p>
 
         <div className="grid md:grid-cols-2 gap-8 mb-10">
           {cards.map((card) => (
-            <div key={card.title} className="fc-card bg-fc-warm-white p-8 flex flex-col items-center text-center">
+            <div key={card.title} className="fc-card-glass p-8 flex flex-col items-center text-center">
               <card.icon size={48} className="text-fc-brown-light mb-4" />
               <span className="fc-badge fc-badge-brown mb-3">{card.badge}</span>
               <h3 className="font-display font-bold text-xl text-fc-brown-dark mb-3">{card.title}</h3>
