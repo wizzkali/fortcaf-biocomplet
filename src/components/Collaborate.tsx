@@ -53,11 +53,11 @@ const Collaborate: React.FC = () => {
     <section id="colabora" className="fc-section-dark py-20 md:py-28">
       <FadeInSection className="max-w-6xl mx-auto px-4 md:px-8">
         <h2 className="fc-h2 text-fc-warm-white text-center mb-2">{t('colab_title')}</h2>
-        <p className="text-center text-fc-green-light mb-12">{t('colab_subtitle')}</p>
+        <p className="text-center text-fc-green-light font-medium tracking-wide mb-12">{t('colab_subtitle')}</p>
 
         <div className="grid md:grid-cols-2 gap-6">
           {cards.map((card) => (
-            <div key={card.profile} className="fc-card bg-fc-brown-mid/40 p-8 border border-fc-brown-mid/60">
+            <div key={card.profile} className="fc-card-glass-dark p-8">
               <div className="flex items-center gap-3 mb-3">
                 <card.icon size={28} className="text-fc-green-light" />
               </div>

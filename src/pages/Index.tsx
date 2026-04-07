@@ -45,45 +45,26 @@ const Index = () => {
           <WaveSeparator color="#E8D5B0" />
 
           <Suspense fallback={<div />}>
-            {/* Bento-style grid section */}
-            <section className="fc-section-cream py-16 md:py-24">
-              <div className="max-w-7xl mx-auto px-4 md:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5">
-                  {/* Shop - takes full width on first row */}
-                  <div className="md:col-span-2 rounded-3xl overflow-hidden">
-                    <Shop />
-                  </div>
+            <Shop />
+            <WaveSeparator color="#DDD0B8" />
 
-                  {/* Agriculture - full width */}
-                  <div className="md:col-span-2 rounded-3xl overflow-hidden">
-                    <Agriculture />
-                  </div>
+            <Agriculture />
+            <WaveSeparator color="#E8D5B0" />
 
-                  {/* Crops + HowToUse side by side on desktop */}
-                  <div className="rounded-3xl overflow-hidden">
-                    <Crops />
-                  </div>
-                  <div className="rounded-3xl overflow-hidden">
-                    <HowToUse />
-                  </div>
+            <Crops />
+            <WaveSeparator color="#3D6B35" />
 
-                  {/* Technical sheet - single column */}
-                  <div className="rounded-3xl overflow-hidden">
-                    <TechnicalSheet />
-                  </div>
+            <HowToUse />
+            <WaveSeparator color="#E8D5B0" />
 
-                  {/* Territory - single column */}
-                  <div className="rounded-3xl overflow-hidden">
-                    <Territory />
-                  </div>
-                </div>
-              </div>
-            </section>
-
+            <TechnicalSheet />
             <WaveSeparator color="#2C1A0E" />
 
             <Collaborate />
             <WaveSeparator color="#E8D5B0" />
+
+            <Territory />
+            <WaveSeparator color="#3D6B35" />
 
             <Contact />
             <WaveSeparator color="#2C1A0E" />
