@@ -1,5 +1,4 @@
 import React from 'react';
-import { Sprout } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FadeInSection from './FadeInSection';
 import CoffeeStain from './CoffeeStain';
@@ -23,8 +22,18 @@ const Territory: React.FC = () => {
               {t('territory_cta')}
             </button>
           </div>
-          <div className="flex-shrink-0 text-center">
-            <Sprout className="w-32 h-32 text-fc-green-dark/30" />
+
+          {/* Placeholder foto Lleida */}
+          <div
+            className="flex-shrink-0 w-full md:w-72 h-56 md:h-72 rounded-2xl flex flex-col items-center justify-center gap-3 border-2 border-dashed"
+            style={{ borderColor: 'rgba(44,26,14,0.2)', backgroundColor: 'rgba(44,26,14,0.04)' }}
+          >
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ color: 'rgba(44,26,14,0.25)' }}>
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span style={{ fontSize: '12px', color: 'rgba(44,26,14,0.35)', textAlign: 'center', padding: '0 1rem' }}>
+              Foto dels camps de Lleida<br />— pendent d'Alfonso
+            </span>
           </div>
         </div>
       </FadeInSection>

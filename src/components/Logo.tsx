@@ -14,8 +14,13 @@ const Logo: React.FC<LogoProps> = ({ size = 'sm', variant = 'dark', className = 
     <img
       src={logoImg}
       alt="FortCafé BioComplet"
-      className={`${variant === 'dark' ? 'mix-blend-multiply' : 'brightness-0 invert'} ${className}`}
-      style={{ width: w, height: 'auto', objectFit: 'contain' }}
+      className={className}
+      style={{
+        width: w,
+        height: 'auto',
+        objectFit: 'contain',
+        filter: variant === 'light' ? 'brightness(0) invert(1)' : 'none',
+      }}
     />
   );
 };

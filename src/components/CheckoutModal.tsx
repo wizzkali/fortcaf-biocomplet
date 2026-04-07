@@ -15,8 +15,8 @@ const CheckoutModal: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const body = `PEDIDO FORTCAFÉ%0A%0AProducto: FortCafé BioComplet 1kg%0ACantidad: ${qty}%0ASubtotal: ${subtotal.toFixed(2)}€%0AEnvío: ${shippingCost === 0 ? 'GRATIS' : shippingCost.toFixed(2) + '€'}%0ATotal: ${total.toFixed(2)}€%0A%0ADATOS DEL CLIENTE%0ANombre: ${form.name}%0AEmail: ${form.email}%0ATeléfono: ${form.phone}%0ADirección: ${form.address}%0ACP: ${form.postal}%0ACiudad: ${form.city}`;
-    window.open(`mailto:${CONFIG.email}?subject=Pedido FortCafé - ${qty} bolsas&body=${body}`);
+    const msg = `🌱 *PEDIDO FORTCAFÉ*\n\n📦 FortCafé BioComplet 1kg × ${qty}\n💶 Subtotal: ${subtotal.toFixed(2)}€\n🚚 Envío: ${shippingCost === 0 ? 'GRATIS' : shippingCost.toFixed(2) + '€'}\n✅ *Total: ${total.toFixed(2)}€*\n\n👤 *Cliente*\nNombre: ${form.name}\nEmail: ${form.email}\nTeléfono: ${form.phone}\nDirección: ${form.address}\nCP: ${form.postal} — ${form.city}`;
+    window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
     setIsCheckoutOpen(false);
   };
 
