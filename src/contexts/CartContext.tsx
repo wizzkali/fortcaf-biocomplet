@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { CONFIG } from '@/config';
 
 interface CartContextType {
@@ -15,14 +15,30 @@ interface CartContextType {
 }
 
 const CartContext = createContext<CartContextType | null>(null);
+const CART_KEY = 'fortcafe_cart';
 
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [qty, setQty] = useState(0);
+  const [qty, setQtyState] = useState<number>(() => {
+    try {
+      const stored = localStorage.getItem(CART_KEY);
+      return stored ? Math.max(0, parseInt(stored, 10)) : 0;
+    } catch {
+      return 0;
+    }
+  });
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
+  useEffect(() => {
+    try {
+      localStorage.setItem(CART_KEY, String(qty));
+    } catch {}
+  }, [qty]);
+
+  const setQty = useCallback((q: number) => setQtyState(Math.max(0, q)), []);
+
   const addToCart = useCallback((amount: number) => {
-    setQty(prev => Math.max(0, prev + amount));
+    setQtyState(prev => Math.max(0, prev + amount));
     setIsCartOpen(true);
   }, []);
 

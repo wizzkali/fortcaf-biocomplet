@@ -41,7 +41,7 @@ const Product: React.FC = () => {
 
             {/* Center product image */}
             <div className="flex justify-center">
-              <img
+              <img loading="lazy"
                 src={doypackImg}
                 alt="FortCafé BioComplet 1kg"
                 className="w-40 md:w-56"
@@ -65,7 +65,7 @@ const Product: React.FC = () => {
 
         {/* Certifications */}
         <div className="flex items-center justify-center gap-4 mt-8">
-          <img src={caaeLogoImg} alt="CAAE Certificación Ecológica" className="h-14 w-auto" />
+          <img loading="lazy" src={caaeLogoImg} alt="CAAE Certificación Ecológica" className="h-14 w-auto" />
           <div className="text-fc-warm-white/70 text-sm">
             <span className="block font-semibold text-fc-warm-white">Certificación Ecológica</span>
             <span>{t('product_cert')}</span>

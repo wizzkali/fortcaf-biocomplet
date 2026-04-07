@@ -8,10 +8,24 @@ const Contact: React.FC = () => {
   const { t } = useLanguage();
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const body = `Nombre: ${form.name}%0AEmail: ${form.email}%0ATeléfono: ${form.phone}%0AMensaje: ${form.message}`;
-    window.open(`mailto:${CONFIG.email}?subject=Consulta FortCafé&body=${body}`);
+    const FORMSPREE = 'https://formspree.io/f/TU_FORM_ID';
+    try {
+      const res = await fetch(FORMSPREE, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: form.name, email: form.email, phone: form.phone, message: form.message }),
+      });
+      if (res.ok) {
+        console.log('FortCafé: formulario enviado OK');
+        setForm({ name: '', email: '', phone: '', message: '' });
+      } else {
+        console.error('FortCafé: Formspree error', res.status);
+      }
+    } catch (err) {
+      console.error('FortCafé: error de red', err);
+    }
   };
 
   return (

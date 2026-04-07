@@ -21,7 +21,7 @@ const Shop: React.FC = () => {
 
         {/* Product card */}
         <div className="fc-card bg-fc-warm-white p-6 md:p-8 max-w-md mx-auto">
-          <img
+          <img loading="lazy"
             src={doypackImg}
             alt={t('shop_product_name')}
             className="w-48 mx-auto mb-6"

@@ -1,9 +1,9 @@
-// ⚠️ CONFIGURACIÓN CENTRAL — Editar estos valores sin tocar el resto del código
+// ⚠️ CONFIGURACIÓN CENTRAL — valores en .env (no editar aquí directamente)
 export const CONFIG = {
-  email:                   'info@fortcafe.es',     // ⚠️ Email real de contacto
-  emailColab:              'info@fortcafe.es',     // ⚠️ Email para colaboraciones B2B
-  whatsapp:                '34655248472',          // ⚠️ Número real WhatsApp (sin +)
-  price_1kg:               9.90,                   // ⚠️ € por bolsa 1kg
-  shipping_cost:           5.90,                   // ⚠️ € coste de envío
-  shipping_free_threshold: 5,                      // ⚠️ Bolsas mínimas para envío gratis
+  email:                   import.meta.env.VITE_EMAIL                   ?? 'info@fortcafe.es',
+  emailColab:              import.meta.env.VITE_EMAIL                   ?? 'info@fortcafe.es',
+  whatsapp:                import.meta.env.VITE_WHATSAPP                ?? '34655248472',
+  price_1kg:               Number(import.meta.env.VITE_PRICE_1KG)       || 9.90,
+  shipping_cost:           Number(import.meta.env.VITE_SHIPPING_COST)   || 5.90,
+  shipping_free_threshold: Number(import.meta.env.VITE_SHIPPING_FREE_THRESHOLD) || 5,
 };
