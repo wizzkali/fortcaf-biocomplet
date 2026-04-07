@@ -12,7 +12,7 @@ const Shop: React.FC = () => {
   const [localQty, setLocalQty] = useState(1);
 
   return (
-    <section id="tienda" className="py-20 md:py-28">
+    <section id="tienda" className="fc-section-cream py-20 md:py-28">
       <FadeInSection className="max-w-2xl mx-auto px-4 md:px-8">
         <h2 className="fc-h2 text-fc-brown-dark text-center mb-4">{t('shop_title')}</h2>
         <div className="text-center mb-12">
