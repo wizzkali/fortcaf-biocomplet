@@ -73,22 +73,6 @@ const Hero: React.FC = () => {
           >
             {t('hero_desc')}
           </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <button
-              onClick={() => document.querySelector('#tienda')?.scrollIntoView({ behavior: 'smooth' })}
-              className="fc-btn-primary"
-            >
-              {t('hero_cta')}
-            </button>
-            <button
-              onClick={() => document.querySelector('#economia-circular')?.scrollIntoView({ behavior: 'smooth' })}
-              className="fc-btn-secondary"
-            >
-              {t('hero_cta2')}
-            </button>
-          </div>
         </div>
       </div>
     </section>

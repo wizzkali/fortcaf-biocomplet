@@ -1,10 +1,10 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import FadeInSection from './FadeInSection';
 
-const NavLink: React.FC<{ label: string; href: string; onClick?: () => void }> = ({ label, href, onClick }) => {
+const NavLink: React.FC<{ label: string; href: string }> = ({ label, href }) => {
   const handleClick = () => {
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-    onClick?.();
   };
   return (
     <button
@@ -31,10 +31,7 @@ const Navbar: React.FC = () => {
   const links = [
     { label: t('nav_inicio'), href: '#inicio' },
     { label: t('nav_producto'), href: '#producto' },
-    { label: t('nav_tienda'), href: '#tienda' },
-    { label: t('nav_agricultura'), href: '#agricultura' },
-    { label: t('nav_colabora'), href: '#colabora' },
-    { label: t('nav_contacto'), href: '#contacto' },
+    { label: 'NUESTRO CAFÉ', href: '#economia-circular' },
   ];
 
   return (
@@ -47,8 +44,8 @@ const Navbar: React.FC = () => {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:h-20">
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8 mx-auto">
+          {/* Desktop nav — centered links */}
+          <div className="hidden md:flex items-center gap-10 mx-auto">
             {links.map((link) => (
               <NavLink key={link.href} label={link.label} href={link.href} />
             ))}
@@ -73,7 +70,10 @@ const Navbar: React.FC = () => {
           {/* Mobile hamburger */}
           <div className="flex items-center gap-3 md:hidden w-full justify-between">
             <span className="font-display font-bold text-sm" style={{ color: '#2C1A0E' }}>FortCafé</span>
-            <button onClick={() => setMobileOpen(!mobileOpen)} className="text-fc-brown-dark">
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="text-fc-brown-dark"
+            >
               {mobileOpen ? '✕' : '☰'}
             </button>
           </div>
@@ -84,14 +84,19 @@ const Navbar: React.FC = () => {
       {mobileOpen && (
         <div className="fixed inset-0 z-40 md:hidden">
           <div className="absolute inset-0 bg-black/40" onClick={() => setMobileOpen(false)} />
-          <div className="absolute right-0 top-0 h-full w-64 p-8 pt-20 flex flex-col gap-5" style={{ backgroundColor: '#A8B89A' }}>
+          <div className="absolute right-0 top-0 h-full w-64 p-8 pt-20 flex flex-col gap-6" style={{ backgroundColor: '#A8B89A' }}>
             {links.map((link) => (
-              <NavLink
+              <button
                 key={link.href}
-                label={link.label}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-              />
+                onClick={() => {
+                  setMobileOpen(false);
+                  document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="font-display font-bold uppercase text-left"
+                style={{ color: '#2C1A0E', fontSize: '16px' }}
+              >
+                {link.label}
+              </button>
             ))}
             <div className="flex gap-2 mt-4">
               <button
