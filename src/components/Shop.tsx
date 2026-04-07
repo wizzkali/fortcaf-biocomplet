@@ -19,7 +19,7 @@ const Shop: React.FC = () => {
           <span className="fc-badge fc-badge-green">{t('shop_free_shipping')}</span>
         </div>
 
-        {/* Product card with glassmorphism */}
+        {/* Product card — glassmorphism */}
         <div className="fc-card-glass p-6 md:p-10 max-w-md mx-auto">
           <img loading="lazy"
             src={doypackImg}
