@@ -24,7 +24,7 @@ export default defineConfig(({ mode }) => ({
     ViteImageOptimizer({
       png: { quality: 80 },
       jpeg: { quality: 75 },
-      webp: { lossy: true, quality: 80 },
+      webp: { quality: 80 },
       avif: { quality: 70 },
     })
   ].filter(Boolean),
