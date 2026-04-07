@@ -19,36 +19,36 @@ const Shop: React.FC = () => {
           <span className="fc-badge fc-badge-green">{t('shop_free_shipping')}</span>
         </div>
 
-        {/* Product card */}
-        <div className="fc-card bg-fc-warm-white p-6 md:p-8 max-w-md mx-auto">
+        {/* Product card — glassmorphism */}
+        <div className="fc-card-glass p-6 md:p-10 max-w-md mx-auto">
           <img loading="lazy"
             src={doypackImg}
             alt={t('shop_product_name')}
-            className="w-48 mx-auto mb-6"
+            className="w-48 mx-auto mb-6 transition-transform duration-500 hover:scale-105"
           />
           <h3 className="font-display font-bold text-xl text-fc-brown-dark mb-2">{t('shop_product_name')}</h3>
-          <p className="text-fc-brown-dark/70 text-sm mb-4">{t('shop_product_desc')}</p>
-          <p className="text-2xl font-bold text-fc-green-dark mb-4">{CONFIG.price_1kg.toFixed(2)} €</p>
+          <p className="text-fc-brown-dark/70 text-sm mb-4 leading-relaxed">{t('shop_product_desc')}</p>
+          <p className="text-3xl font-bold text-fc-green-dark mb-6">{CONFIG.price_1kg.toFixed(2)} €</p>
 
           {/* Quantity selector */}
           <div className="flex items-center justify-center gap-4 mb-4">
             <button
               onClick={() => setLocalQty(Math.max(1, localQty - 1))}
-              className="w-10 h-10 rounded-full border border-fc-beige flex items-center justify-center hover:bg-fc-beige transition-colors"
+              className="w-11 h-11 rounded-full border border-fc-beige flex items-center justify-center hover:bg-fc-beige/50 transition-all duration-300 hover:scale-110 active:scale-95"
             >
               <Minus size={16} />
             </button>
             <span className="text-xl font-bold text-fc-brown-dark w-8 text-center">{localQty}</span>
             <button
               onClick={() => setLocalQty(localQty + 1)}
-              className="w-10 h-10 rounded-full border border-fc-beige flex items-center justify-center hover:bg-fc-beige transition-colors"
+              className="w-11 h-11 rounded-full border border-fc-beige flex items-center justify-center hover:bg-fc-beige/50 transition-all duration-300 hover:scale-110 active:scale-95"
             >
               <Plus size={16} />
             </button>
           </div>
 
           {/* Shipping banner */}
-          <div className={`text-center text-sm mb-4 py-2 rounded-lg ${localQty >= CONFIG.shipping_free_threshold ? 'bg-fc-green-dark/10 text-fc-green-dark animate-pulse' : 'bg-orange-50 text-orange-600'}`}>
+          <div className={`text-center text-sm mb-6 py-2.5 rounded-xl transition-all duration-300 ${localQty >= CONFIG.shipping_free_threshold ? 'bg-fc-green-dark/10 text-fc-green-dark' : 'bg-orange-50 text-orange-600'}`}>
             {localQty >= CONFIG.shipping_free_threshold ? t('shop_shipping_free') : t('shop_shipping_info')}
           </div>
 

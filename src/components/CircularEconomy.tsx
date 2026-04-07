@@ -18,27 +18,27 @@ const CircularEconomy: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 mb-16">
           {/* Problem */}
           <div className="flex flex-col items-center text-center max-w-xs">
-            <div className="w-20 h-20 rounded-full bg-fc-brown-dark/10 flex items-center justify-center mb-4">
+            <div className="w-20 h-20 rounded-full bg-fc-brown-dark/10 flex items-center justify-center mb-4 transition-transform duration-300 hover:scale-110">
               <Coffee size={36} className="text-fc-brown-light" />
             </div>
-            <h3 className="font-display italic text-fc-brown-dark text-xl mb-2">{t('ec_problem_title')}</h3>
-            <p className="text-fc-brown-dark/70 text-sm leading-relaxed">{t('ec_problem_text')}</p>
+            <h3 className="font-display italic text-fc-brown-dark text-2xl mb-2">{t('ec_problem_title')}</h3>
+            <p className="text-fc-brown-dark/70 text-sm leading-relaxed font-medium tracking-wide">{t('ec_problem_text')}</p>
           </div>
 
           {/* Central circular arrow icon */}
           <div className="flex-shrink-0">
-            <div className="w-16 h-16 rounded-full bg-fc-green-dark flex items-center justify-center">
+            <div className="w-16 h-16 rounded-full bg-fc-green-dark flex items-center justify-center transition-transform duration-500 hover:rotate-180">
               <RefreshCw size={32} className="text-fc-warm-white" />
             </div>
           </div>
 
           {/* Solution */}
           <div className="flex flex-col items-center text-center max-w-xs">
-            <div className="w-20 h-20 rounded-full bg-fc-green-dark/10 flex items-center justify-center mb-4">
+            <div className="w-20 h-20 rounded-full bg-fc-green-dark/10 flex items-center justify-center mb-4 transition-transform duration-300 hover:scale-110">
               <Sprout size={36} className="text-fc-green-dark" />
             </div>
-            <h3 className="font-display italic text-fc-green-dark text-xl mb-2">{t('ec_solution_title')}</h3>
-            <p className="text-fc-brown-dark/70 text-sm leading-relaxed">{t('ec_solution_text')}</p>
+            <h3 className="font-display italic text-fc-green-dark text-2xl mb-2">{t('ec_solution_title')}</h3>
+            <p className="text-fc-brown-dark/70 text-sm leading-relaxed font-medium tracking-wide">{t('ec_solution_text')}</p>
           </div>
         </div>
 
@@ -47,7 +47,7 @@ const CircularEconomy: React.FC = () => {
         </p>
 
         <div className="text-center">
-          <p className="font-display italic text-fc-green-dark text-xl mb-4">{t('ec_cta')}</p>
+          <p className="font-display italic text-fc-green-dark text-2xl mb-4">{t('ec_cta')}</p>
           <button
             onClick={() => document.querySelector('#tienda')?.scrollIntoView({ behavior: 'smooth' })}
             className="fc-btn-primary"

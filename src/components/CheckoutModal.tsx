@@ -22,15 +22,18 @@ const CheckoutModal: React.FC = () => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={() => setIsCheckoutOpen(false)}>
-      <div className="absolute inset-0 bg-fc-brown-dark/70" />
-      <div className="relative bg-fc-warm-white rounded-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-        <button onClick={() => setIsCheckoutOpen(false)} className="absolute top-4 right-4 text-fc-brown-dark/50 hover:text-fc-brown-dark">
+      <div className="absolute inset-0 bg-fc-brown-dark/70 backdrop-blur-sm" />
+      <div
+        className="relative fc-modal-glass rounded-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto animate-scale-in"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button onClick={() => setIsCheckoutOpen(false)} className="absolute top-4 right-4 text-fc-brown-dark/50 hover:text-fc-brown-dark transition-colors duration-300">
           <X size={20} />
         </button>
         <h3 className="font-display font-bold text-xl text-fc-brown-dark mb-4">{t('checkout_title')}</h3>
 
         {/* Order summary */}
-        <div className="bg-fc-cream rounded-xl p-4 mb-6 text-sm">
+        <div className="bg-fc-cream/60 backdrop-blur-sm rounded-xl p-4 mb-6 text-sm border border-fc-beige/30">
           <div className="flex justify-between mb-1">
             <span>{t('shop_product_name')} × {qty}</span>
             <span>{subtotal.toFixed(2)} €</span>

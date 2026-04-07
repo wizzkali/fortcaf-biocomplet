@@ -37,6 +37,11 @@
     --fc-beige: 36 28% 84%;
     --fc-warm-white: 42 55% 97%;
     --fc-coffee-stain: 28 48% 24%;
+
+    /* Glassmorphism tokens */
+    --glass-bg: 42 55% 97% / 0.12;
+    --glass-border: 42 55% 97% / 0.18;
+    --glass-blur: 16px;
   }
 }
 
@@ -72,41 +77,77 @@
     color: hsl(var(--fc-warm-white));
   }
   .fc-btn-primary {
-    @apply inline-flex items-center justify-center rounded-full px-8 py-3 font-semibold text-sm uppercase tracking-wider transition-all duration-200;
+    @apply inline-flex items-center justify-center rounded-full px-8 py-3 font-semibold text-sm uppercase tracking-wider transition-all duration-300;
     background-color: hsl(var(--fc-green-dark));
     color: hsl(var(--fc-warm-white));
     letter-spacing: 0.08em;
+    box-shadow: 0 4px 14px hsl(var(--fc-green-dark) / 0.3);
   }
   .fc-btn-primary:hover {
-    transform: scale(1.03);
+    transform: scale(1.02) translateY(-1px);
     background-color: hsl(var(--fc-green-light));
+    box-shadow: 0 8px 24px hsl(var(--fc-green-dark) / 0.4);
   }
   .fc-btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full px-8 py-3 font-semibold text-sm uppercase tracking-wider transition-all duration-200 border-2;
+    @apply inline-flex items-center justify-center rounded-full px-8 py-3 font-semibold text-sm uppercase tracking-wider transition-all duration-300 border-2;
     border-color: hsl(var(--fc-warm-white));
     color: hsl(var(--fc-warm-white));
     background: transparent;
   }
   .fc-btn-secondary:hover {
     background-color: hsl(var(--fc-warm-white) / 0.1);
-    transform: scale(1.03);
+    transform: scale(1.02) translateY(-1px);
+    box-shadow: 0 8px 24px hsl(var(--fc-warm-white) / 0.15);
   }
   .fc-btn-dark {
-    @apply inline-flex items-center justify-center rounded-full px-8 py-3 font-semibold text-sm uppercase tracking-wider transition-all duration-200;
+    @apply inline-flex items-center justify-center rounded-full px-8 py-3 font-semibold text-sm uppercase tracking-wider transition-all duration-300;
     background-color: hsl(var(--fc-brown-dark));
     color: hsl(var(--fc-warm-white));
+    box-shadow: 0 4px 14px hsl(var(--fc-brown-dark) / 0.3);
   }
   .fc-btn-dark:hover {
-    transform: scale(1.03);
+    transform: scale(1.02) translateY(-1px);
     background-color: hsl(var(--fc-brown-mid));
+    box-shadow: 0 8px 24px hsl(var(--fc-brown-dark) / 0.4);
   }
   .fc-card {
-    @apply rounded-2xl transition-all duration-200;
+    @apply rounded-2xl transition-all duration-300;
     box-shadow: 0 4px 24px rgba(44, 26, 14, 0.10);
   }
   .fc-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(44, 26, 14, 0.16);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(44, 26, 14, 0.18);
+  }
+  .fc-card-glass {
+    @apply rounded-2xl transition-all duration-300;
+    background: hsl(var(--fc-warm-white) / 0.7);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsl(var(--fc-warm-white) / 0.4);
+    box-shadow: 0 8px 32px rgba(44, 26, 14, 0.08), inset 0 1px 0 hsl(var(--fc-warm-white) / 0.5);
+  }
+  .fc-card-glass:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(44, 26, 14, 0.14), inset 0 1px 0 hsl(var(--fc-warm-white) / 0.6);
+  }
+  .fc-card-glass-dark {
+    @apply rounded-2xl transition-all duration-300;
+    background: hsl(var(--fc-brown-mid) / 0.4);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsl(var(--fc-warm-white) / 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  }
+  .fc-card-glass-dark:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+    border-color: hsl(var(--fc-warm-white) / 0.15);
+  }
+  .fc-modal-glass {
+    background: hsl(var(--fc-warm-white) / 0.85);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid hsl(var(--fc-warm-white) / 0.5);
   }
   .fc-badge {
     @apply inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider;
@@ -133,11 +174,12 @@
   }
   .fc-h2 {
     font-family: 'Playfair Display', serif;
-    @apply font-bold text-3xl md:text-4xl;
-    letter-spacing: -0.02em;
+    @apply font-bold text-4xl md:text-6xl;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
   }
   .fc-input {
-    @apply w-full rounded-lg border px-4 py-3 text-sm transition-colors;
+    @apply w-full rounded-xl border px-4 py-3.5 text-sm transition-all duration-300;
     border-color: hsl(var(--fc-beige));
     background-color: hsl(var(--fc-warm-white));
     color: hsl(var(--fc-brown-dark));
@@ -145,17 +187,55 @@
   .fc-input:focus {
     outline: none;
     border-color: hsl(var(--fc-green-dark));
-    box-shadow: 0 0 0 2px hsl(var(--fc-green-dark) / 0.2);
+    box-shadow: 0 0 0 3px hsl(var(--fc-green-dark) / 0.15);
+    transform: translateY(-1px);
   }
 }
 
 /* Section fade-in animation */
 .fc-fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .fc-fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Staggered children animation */
+.fc-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fc-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+.fc-stagger.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.fc-stagger.visible > *:nth-child(3) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+.fc-stagger.visible > *:nth-child(4) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.fc-stagger.visible > *:nth-child(5) { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+.fc-stagger.visible > *:nth-child(6) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+.fc-stagger.visible > *:nth-child(7) { transition-delay: 0.35s; opacity: 1; transform: translateY(0); }
+.fc-stagger.visible > *:nth-child(8) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+
+/* Bento grid */
+.fc-bento {
+  display: grid;
+  gap: 1px;
+}
+@media (min-width: 768px) {
+  .fc-bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .fc-bento {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Decorative divider */
+.fc-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, hsl(var(--fc-beige)), transparent);
 }
