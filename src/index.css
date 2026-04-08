@@ -174,9 +174,9 @@
   }
   .fc-h2 {
     font-family: 'Playfair Display', serif;
-    @apply font-bold text-4xl md:text-6xl;
+    @apply font-bold text-5xl md:text-7xl;
     letter-spacing: -0.01em;
-    line-height: 1.1;
+    line-height: 1.05;
   }
   .fc-input {
     @apply w-full rounded-xl border px-4 py-3.5 text-sm transition-all duration-300;
