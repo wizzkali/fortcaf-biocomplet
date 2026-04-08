@@ -40,15 +40,7 @@ const TechnicalSheet: React.FC = () => {
               ))}
             </tbody>
           </table>
-        </div>
-
-        {/* Registry block */}
-        <div className="bg-fc-warm-white rounded-xl p-6 border-l-4 border-fc-green-dark">
-          <p className="font-bold text-fc-brown-dark text-sm mb-1">{t('tech_biocomplet_title')}</p>
-          <p className="text-fc-brown-dark/70 text-sm">{t('tech_biocomplet_reg')}</p>
-          <p className="text-fc-brown-dark/70 text-sm">{t('tech_biocomplet_raw')}</p>
-        </div>
-      </FadeInSection>
+        </div></FadeInSection>
     </section>
   );
 };

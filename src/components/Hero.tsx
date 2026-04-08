@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from './Logo';
-import doypackImg from '@/assets/doypack-hero-blended.png';
+import doypackImg from '@/assets/doypack-nobg.png';
 import forestBg from '@/assets/hero-forest-test.jpg';
 import heroProductBg from '@/assets/hero-product-bg.jpg';
 import badgeImg from '@/assets/biocomplet-badge-transparent.png';
