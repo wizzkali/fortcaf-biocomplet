@@ -3,7 +3,7 @@ import { Leaf, RefreshCw, Shield, CircleOff } from 'lucide-react';
 import caaeLogoImg from '@/assets/caae-logo.png';
 import { useLanguage } from '@/contexts/LanguageContext';
 import FadeInSection from './FadeInSection';
-import doypackImg from '@/assets/doypack-shop.png';
+import doypackImg from '@/assets/doypack-shop-nobg.png';
 
 const Product: React.FC = () => {
   const { t } = useLanguage();
@@ -45,7 +45,7 @@ const Product: React.FC = () => {
                 src={doypackImg}
                 alt="FortCafé BioComplet 1kg"
                 className="w-40 md:w-56"
-                style={{ filter: 'drop-shadow(0 0 40px rgba(90,143,74,0.3))', mixBlendMode: 'multiply' as const }}
+                style={{ filter: 'drop-shadow(0 0 40px rgba(90,143,74,0.3))' }}
               />
             </div>
 

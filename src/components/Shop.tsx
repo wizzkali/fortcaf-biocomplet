@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { useCart } from '@/contexts/CartContext';
 import { CONFIG } from '@/config';
 import FadeInSection from './FadeInSection';
-import doypackImg from '@/assets/doypack-shop.png';
+import doypackImg from '@/assets/doypack-shop-nobg.png';
 
 const Shop: React.FC = () => {
   const { t } = useLanguage();
