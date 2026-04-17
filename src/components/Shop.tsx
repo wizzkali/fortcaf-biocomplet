@@ -27,7 +27,8 @@ const Shop: React.FC = () => {
             className="w-48 mx-auto mb-6 transition-transform duration-500 hover:scale-105"
           />
           <h3 className="font-display font-bold text-xl text-fc-brown-dark mb-2">{t('shop_product_name')}</h3>
-          <p className="text-fc-brown-dark/70 text-sm mb-4 leading-relaxed">{t('shop_product_desc')}</p>
+          <p className="text-fc-brown-dark/70 text-sm mb-2 leading-relaxed">{t('shop_product_desc')}</p>
+          <p className="text-fc-brown-dark/60 text-sm italic mb-4">{t('shop_product_tagline')}</p>
           <p className="text-3xl font-bold text-fc-green-dark mb-6">{CONFIG.price_1kg.toFixed(2)} €</p>
 
           {/* Quantity selector */}
